@@ -271,7 +271,7 @@
     }
 
     modal.hidden = false;
-    document.body.style.overflow = 'hidden';
+    document.body.classList.add('no-scroll');
     var x = $('.modal-x', modal);
     if (x) x.focus();
   }
@@ -318,6 +318,7 @@
     modalFrame.innerHTML = '';
     if (modalInfo) modalInfo.innerHTML = '';
     document.body.classList.remove('no-scroll');
+    document.body.style.overflow = '';
     if (lastFocus && lastFocus.focus) lastFocus.focus();
   }
 
