@@ -80,6 +80,13 @@
      reachable JS reference can be garbage-collected while it still has live
      observations, which silently kills every callback after the first — the
      page then renders blank below the fold on a deep link or refresh. */
+  /* e.target is not always an Element (document, text nodes), and .closest
+     only exists on Elements — guard it rather than throwing inside a
+     high-frequency pointer handler. */
+  function closestFrom(target, sel) {
+    return (target && typeof target.closest === 'function') ? target.closest(sel) : null;
+  }
+
   var KEEP = [];
 
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -159,12 +166,12 @@
   if (grid) {
     if (fine) {
       grid.addEventListener('mouseover', function (e) {
-        var card = e.target.closest('.vcard');
+        var card = closestFrom(e.target, '.vcard');
         if (card && grid.contains(card)) startPreview(card);
       });
       grid.addEventListener('mouseleave', stopPreview);
       grid.addEventListener('focusin', function (e) {
-        var card = e.target.closest('.vcard');
+        var card = closestFrom(e.target, '.vcard');
         if (card) startPreview(card);
       });
     } else if ('IntersectionObserver' in window) {
@@ -251,13 +258,13 @@
   }
 
   document.addEventListener('click', function (e) {
-    var trigger = e.target.closest('[data-yt]');
+    var trigger = closestFrom(e.target, '[data-yt]');
     if (trigger) {
       e.preventDefault();
       openVideo(trigger.dataset.yt, trigger.dataset.title);
       return;
     }
-    if (e.target.closest('[data-close]')) closeVideo();
+    if (closestFrom(e.target, '[data-close]')) closeVideo();
   });
 
   document.addEventListener('keydown', function (e) {
@@ -418,7 +425,7 @@
 
     document.addEventListener('pointermove', function (e) {
       if (e.pointerType !== 'mouse') return;
-      var el = e.target.closest(TILT_SEL);
+      var el = closestFrom(e.target, TILT_SEL);
       if (!el || !el.hasAttribute('data-tilt')) return;
       el.classList.add('is-tilting');
       pending = { el: el, rect: el.getBoundingClientRect(), x: e.clientX, y: e.clientY };
@@ -426,7 +433,7 @@
     }, { passive: true });
 
     document.addEventListener('pointerout', function (e) {
-      var el = e.target.closest(TILT_SEL);
+      var el = closestFrom(e.target, TILT_SEL);
       if (!el) return;
       /* ignore moves between children of the same card */
       if (e.relatedTarget && el.contains(e.relatedTarget)) return;
