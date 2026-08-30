@@ -1037,19 +1037,46 @@ body{-webkit-overflow-scrolling:touch}
 }
 
 
-/* Landscape phones and short windows: stacking wastes the width and leaves
-   the credits below the fold. Put the video and the credits side by side. */
-@media (orientation:landscape) and (max-height:560px) and (min-width:700px){
+}
+
+
+/* ---------- player layout by width ----------------------------------------
+   Stacking only works when the screen is tall relative to its width. On any
+   laptop the video ate the height and left the credits a ~100px sliver, so
+   from 900px up the credits sit beside the video instead of beneath it.
+   -------------------------------------------------------------------------- */
+
+/* stacked (phones, tablet portrait): cap the video so credits stay in view */
+@media (max-width:899px){
+  .modal-vid{max-height:min(48svh,calc((100vw - 2rem) * .5625))}
+}
+
+@media (min-width:900px){
   .modal-box{
     display:grid;
-    grid-template-columns:minmax(0,1.4fr) minmax(230px,.85fr);
+    grid-template-columns:minmax(0,1.5fr) minmax(290px,.78fr);
     grid-template-rows:auto minmax(0,1fr);
+    max-width:1240px;
+    max-height:calc(100svh - 3rem);
   }
   .modal-bar{grid-column:1 / -1}
   .modal-frame{grid-column:1;grid-row:2;align-self:center;min-height:0}
-  #modalInfo{grid-column:2;grid-row:2;min-height:0;border-left:1px solid var(--line)}
-  .modal-info{border-top:0;padding:.9rem 1rem 1.1rem}
-  .modal-vid{max-height:calc(100svh - 4.5rem)}
+  #modalInfo{
+    grid-column:2;grid-row:2;min-height:0;
+    border-left:1px solid var(--line);
+  }
+  .modal-info{border-top:0;padding:1.25rem 1.3rem 1.5rem}
+  .modal-vid{max-height:calc(100svh - 7rem)}
   .modal-facts{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .modal-crew li{grid-template-columns:minmax(72px,42%) 1fr}
 }
+
+/* very wide: give the credits a little more room to breathe */
+@media (min-width:1400px){
+  .modal-box{grid-template-columns:minmax(0,1.6fr) minmax(330px,.7fr)}
+}
+
+/* the credits column always shows it can scroll */
+.modal-info{scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.modal-info::-webkit-scrollbar{width:8px}
+.modal-info::-webkit-scrollbar-thumb{background:var(--line);border-radius:4px}
+.modal-info::-webkit-scrollbar-track{background:transparent}
