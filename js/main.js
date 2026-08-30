@@ -17,47 +17,47 @@
   /* ---------- release data ---------------------------------------------- */
 
   var RELEASES = [
-    { id:'wV6sVMRilmQ', res:'1080p', title:'P Tripper', sub:'Official music video', kind:'mv', kindLabel:'Music video',
+    { id:'wV6sVMRilmQ', crew:[["Vocal", "Novem Htoo"], ["Bass", "PZ"], ["Drum", "Japan Idiots"], ["Guitar", "Min Khant"], ["Mix &amp; master", "PZ"], ["Directed &amp; edited", "No Worries"], ["Camera", "FAT CAT"]], res:'1080p', title:'P Tripper', sub:'Official music video', kind:'mv', kindLabel:'Music video',
       date:'2026-08-29', views:5672, len:'3:17', at:2,
       credits:'Dir. No Worries · Camera FAT CAT · Mix PZ' },
 
-    { id:'Yz292C0Bn5o', res:'1080p', title:'Back Off', sub:'From the album Aggressive Evolution', kind:'mv', kindLabel:'Music video',
+    { id:'Yz292C0Bn5o', crew:[["Album", "Aggressive Evolution"], ["Mix &amp; master", "TheBigBoyToy"], ["Lyrics translated", "U Day"], ["Video", "Mi Joya Pictures"]], res:'1080p', title:'Back Off', sub:'From the album Aggressive Evolution', kind:'mv', kindLabel:'Music video',
       date:'2026-05-25', views:250, len:'3:01', at:2,
       credits:'Mix &amp; master TheBigBoyToy · Mi Joya Pictures' },
 
-    { id:'ip9R4RFdfvs', res:'1080p', title:'Main Character Syndrome', sub:'Official music video', kind:'mv', kindLabel:'Music video',
+    { id:'ip9R4RFdfvs', crew:[["Vocal", "Novem Htoo"], ["Bass", "PZ"], ["Drum", "Japan Idiots"], ["Guitar", "Min Khant"], ["Mix &amp; master", "PZ"], ["Directed &amp; edited", "No Worries"], ["Photography", "Ko Kaung"], ["Production assistant", "Myo Wai Yan"], ["Lighting", "Latt Pan Ni Production"], ["Special thanks", "David Zion"]], res:'1080p', title:'Main Character Syndrome', sub:'Official music video', kind:'mv', kindLabel:'Music video',
       date:'2025-11-28', views:528, len:'2:24', at:2,
       credits:'Dir. No Worries · DoP Ko Kaung · Lights Latt Pan Ni' },
 
-    { id:'j5Z9SpeU73g', res:'1080p', title:'Dog Eat Dog', sub:'Official music video', kind:'mv', kindLabel:'Music video',
+    { id:'j5Z9SpeU73g', crew:[["Vocal", "Novem Htoo"], ["Bass", "PZ"], ["Drum", "Japan Idiots"], ["Guitar", "Min Khant"], ["Mix &amp; master", "PZ"], ["Directed, shot, lit &amp; VFX", "B.S.A"], ["Special thanks", "Min Maw Kunn, Lin Thu"]], res:'1080p', title:'Dog Eat Dog', sub:'Official music video', kind:'mv', kindLabel:'Music video',
       date:'2025-11-23', views:773, len:'3:19', at:2,
       credits:'Shot &amp; cut by B.S.A · Mix PZ' },
 
-    { id:'zL7UzVvXNUQ', res:'360p', title:'Wake Up', sub:'Live at the TGIF show, Taunggyi', kind:'live', kindLabel:'Live',
+    { id:'zL7UzVvXNUQ', crew:[["Show", "TGIF Show, Taunggyi"]], res:'360p', title:'Wake Up', sub:'Live at the TGIF show, Taunggyi', kind:'live', kindLabel:'Live',
       date:'2021-01-08', views:1960, len:'3:21', at:2,
       credits:'Live set · Taunggyi' },
 
-    { id:'qDjrltloZTo', res:'360p', title:'The Voice Grand Final Jam', sub:'Rehearsal session', kind:'live', kindLabel:'Live',
+    { id:'qDjrltloZTo', crew:[["Occasion", "The Voice Myanmar grand final"]], res:'360p', title:'The Voice Grand Final Jam', sub:'Rehearsal session', kind:'live', kindLabel:'Live',
       date:'2020-12-20', views:1174, len:'3:02', at:2,
       credits:'Rehearsal footage' },
 
-    { id:'3t865d335L0', res:'360p', title:'မေ့ · Disregard', sub:'Official lyric video', kind:'lyric', kindLabel:'Lyric video',
+    { id:'3t865d335L0', crew:[["Singer", "Novem Htoo"], ["Lyrics", "Novem Htoo"], ["Mix &amp; master", "Ye Zaw Myo (Big Bag)"], ["Harmony", "Ko Paing (Black Bird)"], ["Lyric video", "RP2, Mevon Production"]], res:'360p', title:'မေ့ · Disregard', sub:'Official lyric video', kind:'lyric', kindLabel:'Lyric video',
       date:'2020-12-14', views:14825, len:'4:36', at:2,
       credits:'Novem Htoo · Mix Ko Ye Zaw Myo · Harmony Ko Paing' },
 
-    { id:'Ie8XdUSULFg', res:'360p', title:'ဒါဟာတိုက်ပွဲ · This Is The War', sub:'Official lyric video', kind:'lyric', kindLabel:'Lyric video',
+    { id:'Ie8XdUSULFg', crew:[["Singer", "Novem Htoo"], ["Lyrics", "Novem Htoo"], ["Mix &amp; master", "Ye Zaw Myo (Big Bag)"], ["Harmony", "Ko Paing (Black Bird)"], ["Lyric video", "Mevon Production"]], res:'360p', title:'ဒါဟာတိုက်ပွဲ · This Is The War', sub:'Official lyric video', kind:'lyric', kindLabel:'Lyric video',
       date:'2020-11-19', views:18229, len:'4:04', at:2,
       credits:'Novem Htoo · Mix Ko Ye Zaw Myo · Harmony Ko Paing' },
 
-    { id:'URPQ8aAx52g', res:'360p', title:'Studio Update #1', sub:'Behind the desk during the pandemic', kind:'doc', kindLabel:'Studio',
+    { id:'URPQ8aAx52g', crew:[["Note", "First studio update, recorded during the pandemic"]], res:'360p', title:'Studio Update #1', sub:'Behind the desk during the pandemic', kind:'doc', kindLabel:'Studio',
       date:'2020-10-24', views:989, len:'2:48', at:2,
       credits:'Studio documentation' },
 
-    { id:'6yPrzqdpPxw', res:'360p', title:'အတုံ့အလှည့် · Vengeance', sub:'Official lyric video', kind:'lyric', kindLabel:'Lyric video',
+    { id:'6yPrzqdpPxw', crew:[["Composed by", "Extant"], ["Mix &amp; master", "Ye Zaw Myo (Big Bag)"]], res:'360p', title:'အတုံ့အလှည့် · Vengeance', sub:'Official lyric video', kind:'lyric', kindLabel:'Lyric video',
       date:'2020-10-14', views:4596, len:'2:33', at:2,
       credits:'Composed by Extant · Mix Ko Ye Zaw Myo (Big Bag)' },
 
-    { id:'4ELxFy0xiYw', res:'360p', title:'အချုပ်အနှောင်မဲ့ · Untie The Knot', sub:'Official lyric video', kind:'lyric', kindLabel:'Lyric video',
+    { id:'4ELxFy0xiYw', crew:[["Composed by", "Extant"], ["Mix &amp; master", "Ye Zaw Myo (Big Bag)"]], res:'360p', title:'အချုပ်အနှောင်မဲ့ · Untie The Knot', sub:'Official lyric video', kind:'lyric', kindLabel:'Lyric video',
       date:'2020-10-01', views:5237, len:'4:03', at:2,
       credits:'Composed by Extant · Mix Ko Ye Zaw Myo (Big Bag)' }
   ];
@@ -233,10 +233,11 @@
   var modal = $('#modal');
   var modalFrame = $('#modalFrame');
   var modalTitle = $('#modalTitle');
+  var modalInfo  = $('#modalInfo');
   var modalOut = $('#modalOut');
   var lastFocus = null;
 
-  function openVideo(id, title) {
+  function openVideo(id, title, rec) {
     if (!modal) return;
     lastFocus = document.activeElement;
     stopPreview();
@@ -254,6 +255,12 @@
         '<a href="https://www.youtube.com/watch?v=' + id + '" target="_blank" rel="noopener noreferrer">' +
         'Watch it on YouTube \u2197</a></p>';
 
+    /* The panel is a sibling of the frame, not a child: the frame is flex:none
+       so anything inside it is unshrinkable, and on a short viewport (landscape
+       phone) the box would grow past the screen instead of the credits
+       scrolling within it. */
+    if (modalInfo) modalInfo.innerHTML = infoPanel(rec);
+
     var vid = $('#modalVid', modal);
     if (vid) {
       /* A codec the browser cannot decode fires error on <source>, not on
@@ -269,6 +276,33 @@
     if (x) x.focus();
   }
 
+
+  /* Credits as published on each video, so the people who made it are named
+     here and not only on YouTube. */
+  function infoPanel(r) {
+    if (!r) return '';
+    var facts =
+      '<li><span>Released</span><b>' + fmtDate(r.date) + '</b></li>' +
+      '<li><span>Running time</span><b>' + r.len + '</b></li>' +
+      '<li><span>Source</span><b>' + r.res + '</b></li>' +
+      '<li><span>Plays</span><b>' + comma(r.views) + '</b></li>';
+
+    var crew = (r.crew || []).map(function (c) {
+      return '<li><span>' + c[0] + '</span><b>' + c[1] + '</b></li>';
+    }).join('');
+
+    return '' +
+      '<div class="modal-info">' +
+        '<div class="modal-info-head">' +
+          '<p class="modal-info-kind">' + r.kindLabel + '</p>' +
+          '<h3 class="modal-info-title">' + r.title + '</h3>' +
+          '<p class="modal-info-sub">' + r.sub + '</p>' +
+        '</div>' +
+        '<ul class="modal-facts">' + facts + '</ul>' +
+        (crew ? '<p class="modal-crew-h">Credits</p><ul class="modal-crew">' + crew + '</ul>' : '') +
+      '</div>';
+  }
+
   function showFallback() {
     var fb = $('.modal-fallback', modal);
     var v  = $('#modalVid', modal);
@@ -282,6 +316,7 @@
     var v = $('#modalVid', modal);
     if (v) { try { v.pause(); } catch (err) {} }
     modalFrame.innerHTML = '';
+    if (modalInfo) modalInfo.innerHTML = '';
     document.body.classList.remove('no-scroll');
     if (lastFocus && lastFocus.focus) lastFocus.focus();
   }
@@ -290,7 +325,11 @@
     var trigger = closestFrom(e.target, '[data-yt]');
     if (trigger) {
       e.preventDefault();
-      openVideo(trigger.dataset.yt, trigger.dataset.title);
+      var rec = null;
+      for (var i = 0; i < RELEASES.length; i++) {
+        if (RELEASES[i].id === trigger.dataset.yt) { rec = RELEASES[i]; break; }
+      }
+      openVideo(trigger.dataset.yt, trigger.dataset.title, rec);
       return;
     }
     if (closestFrom(e.target, '[data-close]')) closeVideo();

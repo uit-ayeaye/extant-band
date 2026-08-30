@@ -972,3 +972,84 @@ body{-webkit-overflow-scrolling:touch}
   .link-ico{top:.9rem;right:.9rem;width:22px;height:22px}
   .link-ico .ico{width:22px;height:22px}
 }
+
+
+/* ---------- modal info panel ---------------------------------------------- */
+
+/* The box can now exceed the viewport, so it scrolls internally rather than
+   pushing the page. The video stays pinned; only the credits scroll. */
+.modal-box{display:flex;flex-direction:column;max-height:calc(100svh - 2rem)}
+.modal-bar{flex:none}
+.modal-frame{flex:none}
+.modal-vid{max-height:min(62svh,calc((100vw - 2rem) * .5625))}
+
+#modalInfo{flex:1 1 auto;min-height:0;display:flex;flex-direction:column}
+.modal-info{
+  flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;
+  padding:1.15rem 1.15rem 1.4rem;border-top:1px solid var(--line);
+  -webkit-overflow-scrolling:touch;
+}
+.modal-info-head{margin-bottom:1rem}
+.modal-info-kind{
+  margin:0 0 .3rem;font-family:var(--mono);font-size:.6rem;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--rust);
+}
+.modal-info-title{
+  margin:0 0 .2rem;font-family:var(--display);font-weight:400;
+  font-size:clamp(1.25rem,3.4vw,1.7rem);line-height:1;
+  text-transform:uppercase;color:var(--bone);
+}
+.modal-info-sub{margin:0;color:var(--ash);font-size:.85rem}
+
+.modal-facts,.modal-crew{list-style:none;margin:0;padding:0;display:grid;gap:.1rem}
+.modal-facts{
+  grid-template-columns:repeat(auto-fit,minmax(118px,1fr));
+  gap:.55rem .9rem;padding:.85rem 0;
+  border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);
+}
+.modal-facts li{display:flex;flex-direction:column;gap:.15rem;min-width:0}
+.modal-facts span{
+  font-family:var(--mono);font-size:.56rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--smoke);
+}
+.modal-facts b{font-family:var(--mono);font-size:.82rem;color:var(--bone);font-weight:700}
+
+.modal-crew-h{
+  margin:1.05rem 0 .5rem;font-family:var(--mono);font-size:.6rem;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--smoke);
+}
+.modal-crew li{
+  display:grid;grid-template-columns:minmax(96px,34%) 1fr;gap:.75rem;
+  padding:.32rem 0;border-bottom:1px solid var(--line-soft);min-width:0;
+}
+.modal-crew li:last-child{border-bottom:0}
+.modal-crew span{
+  font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--smoke);
+}
+.modal-crew b{font-size:.82rem;color:var(--bone);font-weight:500;overflow-wrap:anywhere}
+
+@media (max-width:560px){
+  .modal-box{max-height:calc(100svh - 1.2rem)}
+  .modal-vid{max-height:44svh}
+  .modal-info{padding:.9rem .9rem 1.2rem}
+  .modal-crew li{grid-template-columns:minmax(84px,38%) 1fr;gap:.5rem}
+}
+
+
+/* Landscape phones and short windows: stacking wastes the width and leaves
+   the credits below the fold. Put the video and the credits side by side. */
+@media (orientation:landscape) and (max-height:560px) and (min-width:700px){
+  .modal-box{
+    display:grid;
+    grid-template-columns:minmax(0,1.4fr) minmax(230px,.85fr);
+    grid-template-rows:auto minmax(0,1fr);
+  }
+  .modal-bar{grid-column:1 / -1}
+  .modal-frame{grid-column:1;grid-row:2;align-self:center;min-height:0}
+  #modalInfo{grid-column:2;grid-row:2;min-height:0;border-left:1px solid var(--line)}
+  .modal-info{border-top:0;padding:.9rem 1rem 1.1rem}
+  .modal-vid{max-height:calc(100svh - 4.5rem)}
+  .modal-facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .modal-crew li{grid-template-columns:minmax(72px,42%) 1fr}
+}
