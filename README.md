@@ -21,7 +21,10 @@ assets/
   releases/         P Tripper poster, Revolution Means artwork, covers
   press/            live shots, video stills, The Voice stills
   merch/            REBEL DOG banner
-  video/            11 YouTube thumbnails, named by video id
+  poster/           11 poster frames pulled from the videos themselves
+  preview/          11 silent 8s loops (~3 MB) for the card auto-preview
+  full/             11 full videos, VP9/WebM, source resolution (~272 MB)
+  og/               1200x630 social card
   _source/          untouched originals (originals/ and legacy/)
 ```
 
@@ -33,12 +36,18 @@ signals. Labels, roles, years and meta use bone/ash/rust on a cold blue-black gr
 Blood red belongs to REBEL DOG. Change `--acid` usage in `css/style.css` if you want more
 or less of it.
 
-**Video.** Previews and full playback both stream from the band's own channel through
-`youtube-nocookie` embeds. Cards preview themselves muted on hover (desktop) or when
-centred in the viewport (touch); clicking opens the full video with sound. Nothing is
-rehosted, so plays still land on the band's channel and the repo stays small. Self-hosting
-the actual video files was attempted with `yt-dlp` and is blocked by YouTube (HTTP 403 on
-ranged reads); it would also put 400–700 MB of MP4 into a GitHub Pages repo.
+**Video.** Everything is served from this host. Cards preview themselves with a silent
+8-second loop from `assets/preview` (hover on desktop, centre-of-viewport on touch);
+clicking plays the full video from `assets/full` with native controls. "Watch on YouTube"
+is a deliberate second click, not the default destination.
+
+Full videos are the best resolution YouTube actually holds for each upload: the four modern
+music videos (*P Tripper*, *Back Off*, *Main Character Syndrome*, *Dog Eat Dog*) are true
+1080p; the 2020-21 lyric, live and studio videos are 640x360 because that is their source
+resolution. Cards carry a badge so the two are not conflated.
+
+Regenerating the media needs `yt-dlp` (2026.08 or newer — earlier builds can list the
+1080p DASH formats but get HTTP 403 fetching them) and `ffmpeg`.
 
 **Reveal animations** fail open. If the viewport reports zero height (background tab, some
 embedded webviews) every element is shown immediately rather than left at `opacity: 0`.

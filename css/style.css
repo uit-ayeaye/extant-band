@@ -748,19 +748,62 @@ a{color:inherit}
 
 /* ---------- modal --------------------------------------------------------- */
 
-.modal{position:fixed;inset:0;z-index:120;display:grid;place-items:center;padding:var(--gut)}
+/* The grid track must be explicitly bounded. With a bare place-items:center
+   the column sizes to the item's max-content, and a 1920px-wide <video>
+   drags the track past the viewport — width:100% then resolves against the
+   oversized track instead of the screen, and the box overflows on mobile. */
+.modal{
+  position:fixed;inset:0;z-index:120;
+  display:grid;grid-template-columns:minmax(0,1fr);
+  align-content:center;justify-items:center;
+  padding:var(--gut);
+  overscroll-behavior:contain;
+}
 .modal[hidden]{display:none}
 .modal-back{position:absolute;inset:0;background:rgba(3,4,7,.94);backdrop-filter:blur(6px)}
-.modal-box{position:relative;width:min(100%,980px);border:1px solid var(--acid);background:#000;animation:pop .3s var(--spring)}
+.modal-box{
+  position:relative;
+  width:100%;max-width:1100px;min-width:0;
+  border:1px solid var(--acid);background:#000;
+  animation:pop .3s var(--spring);
+}
 @keyframes pop{from{opacity:0;transform:scale(.94) translateY(12px)}to{opacity:1;transform:scale(1) translateY(0)}}
-.modal-bar{display:flex;align-items:center;gap:.8rem;padding:.55rem .5rem .55rem 1rem;border-bottom:1px solid var(--line)}
-.modal-title{margin:0 auto 0 0;font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--acid);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.modal-out{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ash);text-decoration:none;white-space:nowrap}
-.modal-out:hover{color:var(--bone)}
-.modal-x{background:none;border:none;color:var(--bone);cursor:pointer;font-size:1rem;padding:.4rem .6rem;line-height:1}
+
+.modal-bar{
+  display:flex;align-items:center;gap:.5rem;
+  padding:.5rem .5rem .5rem .9rem;
+  border-bottom:1px solid var(--line);min-width:0;
+}
+.modal-title{
+  flex:1 1 auto;min-width:0;margin:0;
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--acid);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.modal-out{
+  flex:none;display:inline-flex;align-items:center;gap:.4rem;
+  font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ash);text-decoration:none;
+  white-space:nowrap;padding:.35rem .55rem;border:1px solid var(--line);
+  transition:color .2s var(--ease),border-color .2s var(--ease),background .2s var(--ease);
+}
+.modal-out:hover,.modal-out:focus-visible{color:#fff;background:#ff0033;border-color:#ff0033}
+.modal-out .ico{width:15px;height:15px;flex:none}
+.modal-x{flex:none;background:none;border:none;color:var(--bone);cursor:pointer;font-size:1rem;padding:.4rem .55rem;line-height:1}
 .modal-x:hover{color:var(--acid)}
-.modal-frame{aspect-ratio:16/9;background:#000}
-.modal-frame iframe{width:100%;height:100%;border:0;display:block}
+
+/* No fixed aspect-ratio: the files are not all 16:9 (two are 1920x1012),
+   so let each video's own ratio drive the box and avoid black bars. */
+.modal-frame{background:#000;display:grid;min-width:0}
+.modal-frame iframe{width:100%;aspect-ratio:16/9;border:0;display:block}
+
+/* below the bar, and clear of mobile browser chrome */
+@media (max-width:560px){
+  .modal{padding:.6rem}
+  .modal-out-label{display:none}
+  .modal-out{padding:.4rem}
+  .modal-title{font-size:.62rem;letter-spacing:.08em}
+}
 
 /* ---------- reveal -------------------------------------------------------- */
 
@@ -880,14 +923,13 @@ body{-webkit-overflow-scrolling:touch}
 }
 
 /* modal must not scroll the page behind it */
-.modal{overscroll-behavior:contain}
 
 
 /* ---------- self-hosted modal player -------------------------------------- */
 
 .modal-vid{
-  display:block;width:100%;height:100%;
-  max-height:min(78vh,calc((100vw - 2rem) * 0.5625));
+  display:block;width:100%;height:auto;
+  max-height:calc(100svh - 8rem);
   background:#000;object-fit:contain;
 }
 .modal-fallback{
@@ -904,3 +946,29 @@ body{-webkit-overflow-scrolling:touch}
   border:1px solid var(--line);
 }
 .vcard[data-res="1080p"] .vcard-res{color:var(--acid);border-color:var(--acid-dim)}
+
+
+/* ---------- platform marks ------------------------------------------------ */
+
+.sprite{position:absolute;width:0;height:0;overflow:hidden}
+.ico{width:1em;height:1em;display:block;fill:currentColor}
+
+.link-card{position:relative}
+.link-ico{
+  position:absolute;top:1.15rem;right:1.15rem;
+  width:26px;height:26px;color:var(--smoke);
+  transition:color .25s var(--ease),transform .4s var(--spring);
+}
+.link-ico .ico{width:26px;height:26px}
+
+/* each platform lights up in its own colour on hover, not before */
+.link-card:hover .link-ico,.link-card:focus-visible .link-ico{transform:scale(1.12) rotate(-4deg)}
+.link-card[href*="youtube"]:hover  .link-ico{color:#ff0033}
+.link-card[href*="spotify"]:hover  .link-ico{color:#1ed760}
+.link-card[href*="Extantband"]:hover .link-ico{color:#0866ff}
+.link-card[href*="mmrebeldog"]:hover .link-ico{color:var(--blood)}
+
+@media (max-width:560px){
+  .link-ico{top:.9rem;right:.9rem;width:22px;height:22px}
+  .link-ico .ico{width:22px;height:22px}
+}
