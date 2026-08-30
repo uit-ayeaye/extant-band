@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://thomasdlynn.dev/extant-band/sitemap.xml

@@ -4,9 +4,9 @@
    Release data is transcribed from the band's public YouTube channel
    (@extantband3863). View counts are a snapshot taken at build time.
 
-   Video preview and playback both stream from the band's own channel via
-   youtube-nocookie embeds — nothing is rehosted here, so plays still land on
-   their channel and the site stays small enough for static hosting.
+   Card previews are self-hosted 8-second silent loops in assets/preview
+   (~3 MB total, transcoded from the source videos). Full playback with sound
+   opens a youtube-nocookie embed so plays still count on the band's channel.
    ========================================================================== */
 
 (function () {
@@ -15,17 +15,49 @@
   /* ---------- release data ---------------------------------------------- */
 
   var RELEASES = [
-    { id: 'wV6sVMRilmQ', title: 'P Tripper',                    sub: 'Official music video',                 kind: 'mv',    kindLabel: 'Music video', date: '2026-08-29', views: 5530,  len: '3:17', at: 45 },
-    { id: 'Yz292C0Bn5o', title: 'Back Off',                     sub: 'From the album Aggressive Evolution',  kind: 'mv',    kindLabel: 'Music video', date: '2026-05-25', views: 282,   len: '3:01', at: 40 },
-    { id: 'ip9R4RFdfvs', title: 'Main Character Syndrome',      sub: 'Official music video',                 kind: 'mv',    kindLabel: 'Music video', date: '2025-11-28', views: 528,   len: '2:24', at: 35 },
-    { id: 'j5Z9SpeU73g', title: 'Dog Eat Dog',                  sub: 'Official music video',                 kind: 'mv',    kindLabel: 'Music video', date: '2025-11-23', views: 768,   len: '3:19', at: 40 },
-    { id: 'zL7UzVvXNUQ', title: 'Wake Up',                      sub: 'Live at the TGIF show, Taunggyi',      kind: 'live',  kindLabel: 'Live',        date: '2021-01-07', views: 1960,  len: '3:21', at: 30 },
-    { id: 'qDjrltloZTo', title: 'The Voice Grand Final Jam',    sub: 'Rehearsal session',                    kind: 'live',  kindLabel: 'Live',        date: '2020-12-20', views: 1174,  len: '3:03', at: 30 },
-    { id: '3t865d335L0', title: 'မေ့ · Disregard',              sub: 'Official lyric video',                 kind: 'lyric', kindLabel: 'Lyric video', date: '2020-12-13', views: 14823, len: '4:37', at: 50 },
-    { id: 'Ie8XdUSULFg', title: 'ဒါဟာတိုက်ပွဲ · This Is The War', sub: 'Official lyric video',                 kind: 'lyric', kindLabel: 'Lyric video', date: '2020-11-19', views: 18228, len: '4:04', at: 50 },
-    { id: 'URPQ8aAx52g', title: 'Studio Update #1',             sub: 'Behind the desk during the pandemic',  kind: 'doc',   kindLabel: 'Studio',      date: '2020-10-24', views: 989,   len: '2:48', at: 25 },
-    { id: '6yPrzqdpPxw', title: 'အတုံ့အလှည့် · Vengeance',        sub: 'Official lyric video',                 kind: 'lyric', kindLabel: 'Lyric video', date: '2020-10-13', views: 4596,  len: '2:34', at: 40 },
-    { id: '4ELxFy0xiYw', title: 'အချုပ်အနှောင်မဲ့ · Untie The Knot', sub: 'Official lyric video',              kind: 'lyric', kindLabel: 'Lyric video', date: '2020-10-01', views: 5237,  len: '4:04', at: 50 }
+    { id:'wV6sVMRilmQ', title:'P Tripper', sub:'Official music video', kind:'mv', kindLabel:'Music video',
+      date:'2026-08-29', views:5672, len:'3:17', at:2,
+      credits:'Dir. No Worries · Camera FAT CAT · Mix PZ' },
+
+    { id:'Yz292C0Bn5o', title:'Back Off', sub:'From the album Aggressive Evolution', kind:'mv', kindLabel:'Music video',
+      date:'2026-05-25', views:250, len:'3:01', at:2,
+      credits:'Mix &amp; master TheBigBoyToy · Mi Joya Pictures' },
+
+    { id:'ip9R4RFdfvs', title:'Main Character Syndrome', sub:'Official music video', kind:'mv', kindLabel:'Music video',
+      date:'2025-11-28', views:528, len:'2:24', at:2,
+      credits:'Dir. No Worries · DoP Ko Kaung · Lights Latt Pan Ni' },
+
+    { id:'j5Z9SpeU73g', title:'Dog Eat Dog', sub:'Official music video', kind:'mv', kindLabel:'Music video',
+      date:'2025-11-23', views:773, len:'3:19', at:2,
+      credits:'Shot &amp; cut by B.S.A · Mix PZ' },
+
+    { id:'zL7UzVvXNUQ', title:'Wake Up', sub:'Live at the TGIF show, Taunggyi', kind:'live', kindLabel:'Live',
+      date:'2021-01-08', views:1960, len:'3:21', at:2,
+      credits:'Live set · Taunggyi' },
+
+    { id:'qDjrltloZTo', title:'The Voice Grand Final Jam', sub:'Rehearsal session', kind:'live', kindLabel:'Live',
+      date:'2020-12-20', views:1174, len:'3:02', at:2,
+      credits:'Rehearsal footage' },
+
+    { id:'3t865d335L0', title:'မေ့ · Disregard', sub:'Official lyric video', kind:'lyric', kindLabel:'Lyric video',
+      date:'2020-12-14', views:14825, len:'4:36', at:2,
+      credits:'Novem Htoo · Mix Ko Ye Zaw Myo · Harmony Ko Paing' },
+
+    { id:'Ie8XdUSULFg', title:'ဒါဟာတိုက်ပွဲ · This Is The War', sub:'Official lyric video', kind:'lyric', kindLabel:'Lyric video',
+      date:'2020-11-19', views:18229, len:'4:04', at:2,
+      credits:'Novem Htoo · Mix Ko Ye Zaw Myo · Harmony Ko Paing' },
+
+    { id:'URPQ8aAx52g', title:'Studio Update #1', sub:'Behind the desk during the pandemic', kind:'doc', kindLabel:'Studio',
+      date:'2020-10-24', views:989, len:'2:48', at:2,
+      credits:'Studio documentation' },
+
+    { id:'6yPrzqdpPxw', title:'အတုံ့အလှည့် · Vengeance', sub:'Official lyric video', kind:'lyric', kindLabel:'Lyric video',
+      date:'2020-10-14', views:4596, len:'2:33', at:2,
+      credits:'Composed by Extant · Mix Ko Ye Zaw Myo (Big Bag)' },
+
+    { id:'4ELxFy0xiYw', title:'အချုပ်အနှောင်မဲ့ · Untie The Knot', sub:'Official lyric video', kind:'lyric', kindLabel:'Lyric video',
+      date:'2020-10-01', views:5237, len:'4:03', at:2,
+      credits:'Composed by Extant · Mix Ko Ye Zaw Myo (Big Bag)' }
   ];
 
   var MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -65,8 +97,9 @@
                 'data-title="EXTANT — ' + esc(r.title) + '" ' +
                 'aria-label="Play ' + esc(r.title) + '">' +
           '<span class="vcard-shot">' +
-            '<img src="assets/video/' + r.id + '.jpg" alt="" loading="lazy" width="1280" height="720">' +
-            '<span class="vcard-frame"></span>' +
+            '<img src="assets/poster/' + r.id + '.jpg" alt="" loading="lazy" width="1280" height="720">' +
+            '<video class="vcard-vid" muted loop playsinline preload="none" '+
+              'tabindex="-1" aria-hidden="true" data-src="assets/preview/' + r.id + '.mp4"></video>' +
             '<span class="vcard-play"><span aria-hidden="true">▶</span></span>' +
             '<span class="vcard-live">Preview</span>' +
             '<span class="vcard-len">' + r.len + '</span>' +
@@ -75,6 +108,7 @@
             '<span class="vcard-kind">' + r.kindLabel + '</span>' +
             '<span class="vcard-title">' + r.title + '</span>' +
             '<span class="vcard-my">' + r.sub + '</span>' +
+            '<span class="vcard-cred">' + r.credits + '</span>' +
             '<span class="vcard-foot">' +
               '<span>' + fmtDate(r.date) + '</span>' +
               '<span><b>' + fmtViews(r.views) + '</b> plays</span>' +
@@ -98,8 +132,8 @@
 
   function stopPreview() {
     if (!current) return;
-    var frame = $('.vcard-frame', current);
-    if (frame) frame.innerHTML = '';
+    var v = $('.vcard-vid', current);
+    if (v) { try { v.pause(); v.currentTime = 0; } catch (err) {} }
     current.classList.remove('is-previewing');
     current = null;
   }
@@ -107,18 +141,19 @@
   function startPreview(card) {
     if (card === current || !previewOn() || card.hidden) return;
     stopPreview();
-    var id = card.dataset.yt;
-    var at = card.dataset.at || 0;
-    var frame = $('.vcard-frame', card);
-    if (!frame) return;
-    frame.innerHTML =
-      '<iframe tabindex="-1" aria-hidden="true" title="" ' +
-      'src="https://www.youtube-nocookie.com/embed/' + id +
-      '?autoplay=1&mute=1&controls=0&loop=1&playlist=' + id +
-      '&start=' + at + '&modestbranding=1&playsinline=1&rel=0&disablekb=1&fs=0" ' +
-      'allow="autoplay; encrypted-media" frameborder="0"></iframe>';
+    var v = $('.vcard-vid', card);
+    if (!v) return;
+    /* Source is attached on first use so nothing downloads until wanted. */
+    if (!v.getAttribute('src')) v.setAttribute('src', v.dataset.src);
     card.classList.add('is-previewing');
     current = card;
+    var play = v.play();
+    if (play && play.catch) {
+      play.catch(function () {
+        /* Autoplay refused (rare when muted) — drop back to the poster. */
+        if (current === card) { card.classList.remove('is-previewing'); current = null; }
+      });
+    }
   }
 
   if (grid) {
@@ -354,12 +389,60 @@
     sections.forEach(function (s) { so.observe(s); });
   }
 
+
+  /* ---------- 3D tilt ----------------------------------------------------
+     Cursor-tracked tilt on cards. Fine pointers only — there is no cursor to
+     follow on touch, and the CSS gives those an idle float instead. Writes
+     two custom properties and lets CSS own the transform, so the work stays
+     on the compositor. ----------------------------------------------------- */
+
+  var TILT_SEL = '.vcard,.rec,.product,.file,.ret-card,.member,.link-card';
+  var MAX_TILT = 7;   /* degrees */
+
+  if (fine && !reduced) {
+    var tiltables = $$(TILT_SEL);
+    tiltables.forEach(function (el) { el.setAttribute('data-tilt', ''); });
+
+    var queued = false;
+    var pending = null;
+
+    function applyTilt() {
+      queued = false;
+      if (!pending) return;
+      var el = pending.el, r = pending.rect, x = pending.x, y = pending.y;
+      var px = (x - r.left) / r.width - 0.5;
+      var py = (y - r.top) / r.height - 0.5;
+      el.style.setProperty('--ry', (px * MAX_TILT).toFixed(2) + 'deg');
+      el.style.setProperty('--rx', (-py * MAX_TILT).toFixed(2) + 'deg');
+    }
+
+    document.addEventListener('pointermove', function (e) {
+      if (e.pointerType !== 'mouse') return;
+      var el = e.target.closest(TILT_SEL);
+      if (!el || !el.hasAttribute('data-tilt')) return;
+      el.classList.add('is-tilting');
+      pending = { el: el, rect: el.getBoundingClientRect(), x: e.clientX, y: e.clientY };
+      if (!queued) { queued = true; requestAnimationFrame(applyTilt); }
+    }, { passive: true });
+
+    document.addEventListener('pointerout', function (e) {
+      var el = e.target.closest(TILT_SEL);
+      if (!el) return;
+      /* ignore moves between children of the same card */
+      if (e.relatedTarget && el.contains(e.relatedTarget)) return;
+      el.classList.remove('is-tilting');
+      el.style.removeProperty('--rx');
+      el.style.removeProperty('--ry');
+      if (pending && pending.el === el) pending = null;
+    }, { passive: true });
+  }
+
   /* ---------- thumbnail fallback ---------------------------------------- */
 
   document.addEventListener('error', function (e) {
     var img = e.target;
     if (img.tagName !== 'IMG' || img.dataset.fellBack) return;
-    var m = (img.getAttribute('src') || '').match(/assets\/video\/([\w-]{11})\.jpg$/);
+    var m = (img.getAttribute('src') || '').match(/assets\/poster\/([\w-]{11})\.jpg$/);
     if (m) {
       img.dataset.fellBack = '1';
       img.src = 'https://i.ytimg.com/vi/' + m[1] + '/hqdefault.jpg';
