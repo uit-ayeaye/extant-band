@@ -4,9 +4,11 @@
    Release data is transcribed from the band's public YouTube channel
    (@extantband3863). View counts are a snapshot taken at build time.
 
-   Card previews are self-hosted 8-second silent loops in assets/preview
-   (~3 MB total, transcoded from the source videos). Full playback with sound
-   opens a youtube-nocookie embed so plays still count on the band's channel.
+   Both the card previews (assets/preview, 8s silent loops) and the full
+   videos (assets/full, VP9/WebM) are served from this host. Each full video
+   is the best resolution YouTube holds for it: the four modern music videos
+   are 1080p, the 2020-21 uploads are 360p at source. YouTube is a deliberate
+   second click, not the default destination.
    ========================================================================== */
 
 (function () {
@@ -15,47 +17,47 @@
   /* ---------- release data ---------------------------------------------- */
 
   var RELEASES = [
-    { id:'wV6sVMRilmQ', title:'P Tripper', sub:'Official music video', kind:'mv', kindLabel:'Music video',
+    { id:'wV6sVMRilmQ', res:'1080p', title:'P Tripper', sub:'Official music video', kind:'mv', kindLabel:'Music video',
       date:'2026-08-29', views:5672, len:'3:17', at:2,
       credits:'Dir. No Worries · Camera FAT CAT · Mix PZ' },
 
-    { id:'Yz292C0Bn5o', title:'Back Off', sub:'From the album Aggressive Evolution', kind:'mv', kindLabel:'Music video',
+    { id:'Yz292C0Bn5o', res:'1080p', title:'Back Off', sub:'From the album Aggressive Evolution', kind:'mv', kindLabel:'Music video',
       date:'2026-05-25', views:250, len:'3:01', at:2,
       credits:'Mix &amp; master TheBigBoyToy · Mi Joya Pictures' },
 
-    { id:'ip9R4RFdfvs', title:'Main Character Syndrome', sub:'Official music video', kind:'mv', kindLabel:'Music video',
+    { id:'ip9R4RFdfvs', res:'1080p', title:'Main Character Syndrome', sub:'Official music video', kind:'mv', kindLabel:'Music video',
       date:'2025-11-28', views:528, len:'2:24', at:2,
       credits:'Dir. No Worries · DoP Ko Kaung · Lights Latt Pan Ni' },
 
-    { id:'j5Z9SpeU73g', title:'Dog Eat Dog', sub:'Official music video', kind:'mv', kindLabel:'Music video',
+    { id:'j5Z9SpeU73g', res:'1080p', title:'Dog Eat Dog', sub:'Official music video', kind:'mv', kindLabel:'Music video',
       date:'2025-11-23', views:773, len:'3:19', at:2,
       credits:'Shot &amp; cut by B.S.A · Mix PZ' },
 
-    { id:'zL7UzVvXNUQ', title:'Wake Up', sub:'Live at the TGIF show, Taunggyi', kind:'live', kindLabel:'Live',
+    { id:'zL7UzVvXNUQ', res:'360p', title:'Wake Up', sub:'Live at the TGIF show, Taunggyi', kind:'live', kindLabel:'Live',
       date:'2021-01-08', views:1960, len:'3:21', at:2,
       credits:'Live set · Taunggyi' },
 
-    { id:'qDjrltloZTo', title:'The Voice Grand Final Jam', sub:'Rehearsal session', kind:'live', kindLabel:'Live',
+    { id:'qDjrltloZTo', res:'360p', title:'The Voice Grand Final Jam', sub:'Rehearsal session', kind:'live', kindLabel:'Live',
       date:'2020-12-20', views:1174, len:'3:02', at:2,
       credits:'Rehearsal footage' },
 
-    { id:'3t865d335L0', title:'မေ့ · Disregard', sub:'Official lyric video', kind:'lyric', kindLabel:'Lyric video',
+    { id:'3t865d335L0', res:'360p', title:'မေ့ · Disregard', sub:'Official lyric video', kind:'lyric', kindLabel:'Lyric video',
       date:'2020-12-14', views:14825, len:'4:36', at:2,
       credits:'Novem Htoo · Mix Ko Ye Zaw Myo · Harmony Ko Paing' },
 
-    { id:'Ie8XdUSULFg', title:'ဒါဟာတိုက်ပွဲ · This Is The War', sub:'Official lyric video', kind:'lyric', kindLabel:'Lyric video',
+    { id:'Ie8XdUSULFg', res:'360p', title:'ဒါဟာတိုက်ပွဲ · This Is The War', sub:'Official lyric video', kind:'lyric', kindLabel:'Lyric video',
       date:'2020-11-19', views:18229, len:'4:04', at:2,
       credits:'Novem Htoo · Mix Ko Ye Zaw Myo · Harmony Ko Paing' },
 
-    { id:'URPQ8aAx52g', title:'Studio Update #1', sub:'Behind the desk during the pandemic', kind:'doc', kindLabel:'Studio',
+    { id:'URPQ8aAx52g', res:'360p', title:'Studio Update #1', sub:'Behind the desk during the pandemic', kind:'doc', kindLabel:'Studio',
       date:'2020-10-24', views:989, len:'2:48', at:2,
       credits:'Studio documentation' },
 
-    { id:'6yPrzqdpPxw', title:'အတုံ့အလှည့် · Vengeance', sub:'Official lyric video', kind:'lyric', kindLabel:'Lyric video',
+    { id:'6yPrzqdpPxw', res:'360p', title:'အတုံ့အလှည့် · Vengeance', sub:'Official lyric video', kind:'lyric', kindLabel:'Lyric video',
       date:'2020-10-14', views:4596, len:'2:33', at:2,
       credits:'Composed by Extant · Mix Ko Ye Zaw Myo (Big Bag)' },
 
-    { id:'4ELxFy0xiYw', title:'အချုပ်အနှောင်မဲ့ · Untie The Knot', sub:'Official lyric video', kind:'lyric', kindLabel:'Lyric video',
+    { id:'4ELxFy0xiYw', res:'360p', title:'အချုပ်အနှောင်မဲ့ · Untie The Knot', sub:'Official lyric video', kind:'lyric', kindLabel:'Lyric video',
       date:'2020-10-01', views:5237, len:'4:03', at:2,
       credits:'Composed by Extant · Mix Ko Ye Zaw Myo (Big Bag)' }
   ];
@@ -100,7 +102,7 @@
   if (grid) {
     grid.innerHTML = RELEASES.map(function (r) {
       return '' +
-        '<button class="vcard" data-kind="' + r.kind + '" data-yt="' + r.id + '" data-at="' + r.at + '" ' +
+        '<button class="vcard" data-res="' + r.res + '" data-kind="' + r.kind + '" data-yt="' + r.id + '" data-at="' + r.at + '" ' +
                 'data-title="EXTANT — ' + esc(r.title) + '" ' +
                 'aria-label="Play ' + esc(r.title) + '">' +
           '<span class="vcard-shot">' +
@@ -110,6 +112,7 @@
             '<span class="vcard-play"><span aria-hidden="true">▶</span></span>' +
             '<span class="vcard-live">Preview</span>' +
             '<span class="vcard-len">' + r.len + '</span>' +
+            '<span class="vcard-res">' + r.res + '</span>' +
           '</span>' +
           '<span class="vcard-body">' +
             '<span class="vcard-kind">' + r.kindLabel + '</span>' +
@@ -235,23 +238,49 @@
 
   function openVideo(id, title) {
     if (!modal) return;
-    stopPreview();
     lastFocus = document.activeElement;
+    stopPreview();
     modalTitle.textContent = title || '';
     if (modalOut) modalOut.href = 'https://www.youtube.com/watch?v=' + id;
+
+    /* Full video is served from this host. YouTube is a deliberate second
+       click, not the default destination. */
     modalFrame.innerHTML =
-      '<iframe src="https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0" ' +
-      'title="' + esc(title || 'Video player') + '" allow="accelerometer; autoplay; encrypted-media; ' +
-      'gyroscope; picture-in-picture" allowfullscreen></iframe>';
+      '<video id="modalVid" class="modal-vid" controls autoplay playsinline ' +
+             'preload="metadata" poster="assets/poster/' + id + '.jpg">' +
+        '<source src="assets/full/' + id + '.webm" type="video/webm">' +
+      '</video>' +
+      '<p class="modal-fallback" hidden>This clip will not play in your browser. ' +
+        '<a href="https://www.youtube.com/watch?v=' + id + '" target="_blank" rel="noopener noreferrer">' +
+        'Watch it on YouTube \u2197</a></p>';
+
+    var vid = $('#modalVid', modal);
+    if (vid) {
+      /* A codec the browser cannot decode fires error on <source>, not on
+         <video>, so listen on the element in the capture phase. */
+      vid.addEventListener('error', showFallback, true);
+      var play = vid.play();
+      if (play && play.catch) play.catch(function () { /* user can hit play */ });
+    }
+
     modal.hidden = false;
-    document.body.classList.add('no-scroll');
+    document.body.style.overflow = 'hidden';
     var x = $('.modal-x', modal);
     if (x) x.focus();
+  }
+
+  function showFallback() {
+    var fb = $('.modal-fallback', modal);
+    var v  = $('#modalVid', modal);
+    if (fb) fb.hidden = false;
+    if (v) v.style.display = 'none';
   }
 
   function closeVideo() {
     if (!modal || modal.hidden) return;
     modal.hidden = true;
+    var v = $('#modalVid', modal);
+    if (v) { try { v.pause(); } catch (err) {} }
     modalFrame.innerHTML = '';
     document.body.classList.remove('no-scroll');
     if (lastFocus && lastFocus.focus) lastFocus.focus();
