@@ -39,6 +39,7 @@ Netlify Blobs stores drafts, jobs, upload staging, access records and audit reco
 
 ## Delivery documents
 
+- [Delivery status and verified live tests](docs/DELIVERY.md)
 - [Client handbook](docs/CLIENT-HANDBOOK.md)
 - [Owner operations and handover](docs/OPERATIONS.md)
 - [Research and content audit](docs/RESEARCH.md)
