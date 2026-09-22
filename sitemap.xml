@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://thomasdlynn.dev/extant-band/</loc>
+    <loc>https://extant.band/</loc>
     <lastmod>2026-08-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://thomasdlynn.dev/extant-band/assets/og/og-cover.jpg</image:loc>
+      <image:loc>https://extant.band/assets/og/og-cover.jpg</image:loc>
       <image:title>EXTANT — Myanmar djent and metalcore</image:title>
     </image:image>
   </url>

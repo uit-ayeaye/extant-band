@@ -89,3 +89,9 @@ it's missing — then bump the chip count and hero total in `index.html`.
 - CSS/JS are versioned with `?v=N` query strings — bump on deploy to bust caches.
 - Media, artwork and photography remain the property of EXTANT, REBEL DOG and their
   respective owners.
+
+## Production domain
+
+Public site: https://extant.band/ (GitHub Pages, main branch root).
+The apex uses GitHub Pages A records; www is a CNAME to uit-ayeaye.github.io.
+Keep CNAME, canonical URLs, social image URLs and sitemap aligned with this domain.
