@@ -16,51 +16,7 @@
 
   /* ---------- release data ---------------------------------------------- */
 
-  var RELEASES = [
-    { id:'wV6sVMRilmQ', crew:[["Vocal", "Novem Htoo"], ["Bass", "PZ"], ["Drum", "Japan Idiots"], ["Guitar", "Min Khant"], ["Mix &amp; master", "PZ"], ["Directed &amp; edited", "No Worries"], ["Camera", "FAT CAT"]], res:'1080p', title:'P Tripper', sub:'Official music video', kind:'mv', kindLabel:'Music video',
-      date:'2026-08-29', views:5672, len:'3:17', at:2,
-      credits:'Dir. No Worries · Camera FAT CAT · Mix PZ' },
-
-    { id:'Yz292C0Bn5o', crew:[["Album", "Aggressive Evolution"], ["Mix &amp; master", "TheBigBoyToy"], ["Lyrics translated", "U Day"], ["Video", "Mi Joya Pictures"]], res:'1080p', title:'Back Off', sub:'From the album Aggressive Evolution', kind:'mv', kindLabel:'Music video',
-      date:'2026-05-25', views:250, len:'3:01', at:2,
-      credits:'Mix &amp; master TheBigBoyToy · Mi Joya Pictures' },
-
-    { id:'ip9R4RFdfvs', crew:[["Vocal", "Novem Htoo"], ["Bass", "PZ"], ["Drum", "Japan Idiots"], ["Guitar", "Min Khant"], ["Mix &amp; master", "PZ"], ["Directed &amp; edited", "No Worries"], ["Photography", "Ko Kaung"], ["Production assistant", "Myo Wai Yan"], ["Lighting", "Latt Pan Ni Production"], ["Special thanks", "David Zion"]], res:'1080p', title:'Main Character Syndrome', sub:'Official music video', kind:'mv', kindLabel:'Music video',
-      date:'2025-11-28', views:528, len:'2:24', at:2,
-      credits:'Dir. No Worries · DoP Ko Kaung · Lights Latt Pan Ni' },
-
-    { id:'j5Z9SpeU73g', crew:[["Vocal", "Novem Htoo"], ["Bass", "PZ"], ["Drum", "Japan Idiots"], ["Guitar", "Min Khant"], ["Mix &amp; master", "PZ"], ["Directed, shot, lit &amp; VFX", "B.S.A"], ["Special thanks", "Min Maw Kunn, Lin Thu"]], res:'1080p', title:'Dog Eat Dog', sub:'Official music video', kind:'mv', kindLabel:'Music video',
-      date:'2025-11-23', views:773, len:'3:19', at:2,
-      credits:'Shot &amp; cut by B.S.A · Mix PZ' },
-
-    { id:'zL7UzVvXNUQ', crew:[["Show", "TGIF Show, Taunggyi"]], res:'360p', title:'Wake Up', sub:'Live at the TGIF show, Taunggyi', kind:'live', kindLabel:'Live',
-      date:'2021-01-08', views:1960, len:'3:21', at:2,
-      credits:'Live set · Taunggyi' },
-
-    { id:'qDjrltloZTo', crew:[["Occasion", "The Voice Myanmar grand final"]], res:'360p', title:'The Voice Grand Final Jam', sub:'Rehearsal session', kind:'live', kindLabel:'Live',
-      date:'2020-12-20', views:1174, len:'3:02', at:2,
-      credits:'Rehearsal footage' },
-
-    { id:'3t865d335L0', crew:[["Singer", "Novem Htoo"], ["Lyrics", "Novem Htoo"], ["Mix &amp; master", "Ye Zaw Myo (Big Bag)"], ["Harmony", "Ko Paing (Black Bird)"], ["Lyric video", "RP2, Mevon Production"]], res:'360p', title:'မေ့ · Disregard', sub:'Official lyric video', kind:'lyric', kindLabel:'Lyric video',
-      date:'2020-12-14', views:14825, len:'4:36', at:2,
-      credits:'Novem Htoo · Mix Ko Ye Zaw Myo · Harmony Ko Paing' },
-
-    { id:'Ie8XdUSULFg', crew:[["Singer", "Novem Htoo"], ["Lyrics", "Novem Htoo"], ["Mix &amp; master", "Ye Zaw Myo (Big Bag)"], ["Harmony", "Ko Paing (Black Bird)"], ["Lyric video", "Mevon Production"]], res:'360p', title:'ဒါဟာတိုက်ပွဲ · This Is The War', sub:'Official lyric video', kind:'lyric', kindLabel:'Lyric video',
-      date:'2020-11-19', views:18229, len:'4:04', at:2,
-      credits:'Novem Htoo · Mix Ko Ye Zaw Myo · Harmony Ko Paing' },
-
-    { id:'URPQ8aAx52g', crew:[["Note", "First studio update, recorded during the pandemic"]], res:'360p', title:'Studio Update #1', sub:'Behind the desk during the pandemic', kind:'doc', kindLabel:'Studio',
-      date:'2020-10-24', views:989, len:'2:48', at:2,
-      credits:'Studio documentation' },
-
-    { id:'6yPrzqdpPxw', crew:[["Composed by", "Extant"], ["Mix &amp; master", "Ye Zaw Myo (Big Bag)"]], res:'360p', title:'အတုံ့အလှည့် · Vengeance', sub:'Official lyric video', kind:'lyric', kindLabel:'Lyric video',
-      date:'2020-10-14', views:4596, len:'2:33', at:2,
-      credits:'Composed by Extant · Mix Ko Ye Zaw Myo (Big Bag)' },
-
-    { id:'4ELxFy0xiYw', crew:[["Composed by", "Extant"], ["Mix &amp; master", "Ye Zaw Myo (Big Bag)"]], res:'360p', title:'အချုပ်အနှောင်မဲ့ · Untie The Knot', sub:'Official lyric video', kind:'lyric', kindLabel:'Lyric video',
-      date:'2020-10-01', views:5237, len:'4:03', at:2,
-      credits:'Composed by Extant · Mix Ko Ye Zaw Myo (Big Bag)' }
-  ];
+  var RELEASES = window.EXTANT_RELEASES || [];
 
   var MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
@@ -106,19 +62,19 @@
                 'data-title="EXTANT — ' + esc(r.title) + '" ' +
                 'aria-label="Play ' + esc(r.title) + '">' +
           '<span class="vcard-shot">' +
-            '<img src="assets/poster/' + r.id + '.jpg" alt="" loading="lazy" width="1280" height="720">' +
+            '<img src="' + esc(r.poster || ('https://i.ytimg.com/vi/' + r.id + '/hqdefault.jpg')) + '" alt="" loading="lazy" width="1280" height="720">' +
             '<video class="vcard-vid" muted loop playsinline preload="none" '+
-              'tabindex="-1" aria-hidden="true" data-src="assets/preview/' + r.id + '.mp4"></video>' +
+              'tabindex="-1" aria-hidden="true" data-src="' + esc(r.preview) + '"></video>' +
             '<span class="vcard-play"><span aria-hidden="true">▶</span></span>' +
             '<span class="vcard-live">Preview</span>' +
-            '<span class="vcard-len">' + r.len + '</span>' +
+            '<span class="vcard-len">' + esc(r.len) + '</span>' +
             '<span class="vcard-res">' + r.res + '</span>' +
           '</span>' +
           '<span class="vcard-body">' +
-            '<span class="vcard-kind">' + r.kindLabel + '</span>' +
-            '<span class="vcard-title">' + r.title + '</span>' +
-            '<span class="vcard-my">' + r.sub + '</span>' +
-            '<span class="vcard-cred">' + r.credits + '</span>' +
+            '<span class="vcard-kind">' + esc(r.kindLabel) + '</span>' +
+            '<span class="vcard-title">' + esc(r.title) + '</span>' +
+            '<span class="vcard-my">' + esc(r.sub) + '</span>' +
+            '<span class="vcard-cred">' + esc(r.credits) + '</span>' +
             '<span class="vcard-foot">' +
               '<span>' + fmtDate(r.date) + '</span>' +
               '<span><b>' + fmtViews(r.views) + '</b> plays</span>' +
@@ -152,7 +108,7 @@
     if (card === current || !previewOn() || card.hidden) return;
     stopPreview();
     var v = $('.vcard-vid', card);
-    if (!v) return;
+    if (!v || !v.dataset.src) return;
     /* Source is attached on first use so nothing downloads until wanted. */
     if (!v.getAttribute('src')) v.setAttribute('src', v.dataset.src);
     card.classList.add('is-previewing');
@@ -248,8 +204,8 @@
        click, not the default destination. */
     modalFrame.innerHTML =
       '<video id="modalVid" class="modal-vid" controls autoplay playsinline ' +
-             'preload="metadata" poster="assets/poster/' + id + '.jpg">' +
-        '<source src="assets/full/' + id + '.webm" type="video/webm">' +
+             'preload="metadata" poster="' + esc(rec && rec.poster || ('https://i.ytimg.com/vi/' + id + '/hqdefault.jpg')) + '">' +
+        '<source src="' + esc(rec && rec.video || '') + '">' +
       '</video>' +
       '<p class="modal-fallback" hidden>This clip will not play in your browser. ' +
         '<a href="https://www.youtube.com/watch?v=' + id + '" target="_blank" rel="noopener noreferrer">' +
@@ -261,6 +217,7 @@
        scrolling within it. */
     if (modalInfo) modalInfo.innerHTML = infoPanel(rec);
 
+    if (rec && !rec.video) showFallback();
     var vid = $('#modalVid', modal);
     if (vid) {
       /* A codec the browser cannot decode fires error on <source>, not on
@@ -283,20 +240,20 @@
     if (!r) return '';
     var facts =
       '<li><span>Released</span><b>' + fmtDate(r.date) + '</b></li>' +
-      '<li><span>Running time</span><b>' + r.len + '</b></li>' +
+      '<li><span>Running time</span><b>' + esc(r.len) + '</b></li>' +
       '<li><span>Source</span><b>' + r.res + '</b></li>' +
       '<li><span>Plays</span><b>' + comma(r.views) + '</b></li>';
 
     var crew = (r.crew || []).map(function (c) {
-      return '<li><span>' + c[0] + '</span><b>' + c[1] + '</b></li>';
+      return '<li><span>' + esc(c[0]) + '</span><b>' + esc(c[1]) + '</b></li>';
     }).join('');
 
     return '' +
       '<div class="modal-info">' +
         '<div class="modal-info-head">' +
-          '<p class="modal-info-kind">' + r.kindLabel + '</p>' +
-          '<h3 class="modal-info-title">' + r.title + '</h3>' +
-          '<p class="modal-info-sub">' + r.sub + '</p>' +
+          '<p class="modal-info-kind">' + esc(r.kindLabel) + '</p>' +
+          '<h3 class="modal-info-title">' + esc(r.title) + '</h3>' +
+          '<p class="modal-info-sub">' + esc(r.sub) + '</p>' +
         '</div>' +
         '<ul class="modal-facts">' + facts + '</ul>' +
         (crew ? '<p class="modal-crew-h">Credits</p><ul class="modal-crew">' + crew + '</ul>' : '') +

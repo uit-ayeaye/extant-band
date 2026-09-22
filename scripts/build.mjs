@@ -1,0 +1,13 @@
+import {readFile,writeFile,mkdir,cp,rm,access} from 'node:fs/promises';
+import {renderSite} from '../lib/render.mjs';
+import {validateContent} from '../lib/content.mjs';
+const c=validateContent(JSON.parse(await readFile('content/site.json','utf8')));
+const refs=[...Object.values(c.images).map(x=>x.src),...c.members.map(x=>x.photo),...c.gallery.map(x=>x.src),...c.releases.flatMap(x=>[x.poster,x.preview,x.video])].filter(Boolean);
+for(const path of refs)await access(path);
+await rm('dist',{recursive:true,force:true});await mkdir('dist',{recursive:true});
+for(const path of ['css','js','CNAME','robots.txt','sitemap.xml'])await cp(path,`dist/${path}`,{recursive:true});
+await cp('assets','dist/assets',{recursive:true,filter:src=>!src.includes('/_source')});
+const html=renderSite(await readFile('templates/index.html','utf8'),c,{revision:process.env.GITHUB_SHA||'local'});
+await writeFile('dist/index.html',html);await writeFile('dist/.nojekyll','');
+await writeFile('dist/revision.json',JSON.stringify({commit:process.env.GITHUB_SHA||'local'}));
+console.log(`Built ${c.members.length} members, ${c.releases.length} videos, ${c.gallery.length} gallery photos.`);

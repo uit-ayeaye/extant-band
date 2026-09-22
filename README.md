@@ -1,97 +1,66 @@
-# EXTANT — official-style band site
+# EXTANT — band portfolio and Telegram content manager
 
-Static site for **EXTANT**, a djent and metalcore band founded in Yangon, Myanmar in 2015.
-Rebuilt from an earlier solo-artist portfolio into a full band site: the return from exile,
-records, every video, the lineup, history and REBEL DOG · BITE BACK merch.
+Public website: https://extant.band · Bot: https://t.me/extant_band_manager_bot
 
-No build step, no dependencies. Open `index.html` or serve the folder.
+The site remains static on **GitHub Pages**. A separate **Netlify Functions** backend lets approved Telegram users edit content using DeepSeek, preview changes, publish a Git commit, and restore previous content snapshots.
 
-```bash
-python3 -m http.server 8099
+## Local development
+
+Requires Node 22 or newer.
+
+```sh
+npm ci
+npm run check
+python3 -m http.server 8099 --directory dist
 ```
 
-## Structure
+`npm run build` renders `templates/index.html` with `content/site.json` into `dist/`. It copies public assets only; source originals, code, credentials and drafts are not included in the Pages artifact. The root `index.html` is a legacy snapshot; the deployed site is built from the template and content file.
 
+## Content
+
+- `content/site.json`: member profiles, release archive, gallery, text blocks, links, image references, metadata and section visibility.
+- `templates/index.html`: fixed page structure with content binding attributes.
+- `lib/content.mjs`: strict schema, supported edit paths, markup sanitization and diffs.
+- `lib/render.mjs`: shared static-site and private-preview renderer.
+- `js/main.js`, `css/style.css`: interactions and visual design.
+- `assets/`: original portfolio media plus bot-managed `uploads/`.
+
+Historical video credits preserve the names originally transcribed from the videos. Oo Japan's current member profile uses the name requested by the client. See [research and evidence notes](docs/RESEARCH.md).
+
+## Backend
+
+- `/api/telegram`: validates Telegram's secret header and queues durable updates.
+- `process-background`: performs authorized commands, DeepSeek proposals and GitHub writes.
+- `/preview/:token`: expiring, unguessable draft preview and complete diff; unpublished images remain private to that link.
+- `/api/github`: verifies signed GitHub workflow notifications and reports deployment success/failure.
+- `maintenance`: retries interrupted work and cleans temporary records after seven days.
+
+Netlify Blobs stores drafts, jobs, upload staging, access records and audit records. Conditional writes serialize per-user work and publishing; branch updates use non-forced Git ref updates against the draft's base commit. An uncertain publish is recoverable through its saved commit. The AI can edit only validated content; it never receives credentials or writes arbitrary repository files.
+
+## Delivery documents
+
+- [Client handbook](docs/CLIENT-HANDBOOK.md)
+- [Owner operations and handover](docs/OPERATIONS.md)
+- [Research and content audit](docs/RESEARCH.md)
+
+## Deployment
+
+GitHub Actions `.github/workflows/pages.yml` runs tests, builds an allowlisted static artifact, and deploys it to Pages. Configure Pages to use GitHub Actions; retain the `extant.band` custom domain. Bot commits trigger the same workflow.
+
+`netlify.toml` deploys **only the bot backend and its landing page**, not the portfolio. Configure the variables in `.env.example` as Netlify environment variables. Never commit a populated `.env` or export secrets to `dist/`.
+
+```sh
+npx netlify link --id YOUR_NETLIFY_PROJECT_ID
+# CLI import prints values: redirect its output to a private ignored file.
+npx netlify env:import .env > .local/env-import.log
+npm run bot:deploy
+npm run bot:setup
 ```
-index.html          single page, eight sections
-css/style.css       design system + all layout
-js/main.js          release data, vault grid, auto-preview, filters, modal, reveals
-assets/
-  brand/            EXTANT logos, REBEL DOG "Bite Back" mark
-  releases/         P Tripper poster, Revolution Means artwork, covers
-  press/            live shots, video stills, The Voice stills
-  merch/            REBEL DOG banner
-  poster/           11 poster frames pulled from the videos themselves
-  preview/          11 silent 8s loops (~3 MB) for the card auto-preview
-  full/             11 full videos, VP9/WebM, source resolution (~272 MB)
-  og/               1200x630 social card
-  _source/          untouched originals (originals/ and legacy/)
-```
 
-## Design notes
+Set up a repository webhook for `workflow_run`, targeting `BOT_BASE_URL/api/github` with `GITHUB_WEBHOOK_SECRET`. The runtime GitHub token needs only Contents read/write and Actions read on this repository; repository Administration or Workflows write permissions are unnecessary. Keep initial deployment and hook administration on your local authenticated GitHub CLI.
 
-**Colour.** The band's logo is acid lime on black, but lime everywhere reads as a UI theme
-rather than a band. Lime is rationed to the logo mark, the primary CTA, and "live now"
-signals. Labels, roles, years and meta use bone/ash/rust on a cold blue-black ground.
-Blood red belongs to REBEL DOG. Change `--acid` usage in `css/style.css` if you want more
-or less of it.
+Everyday client content work requires no local machine or server process. Backend code changes require another Netlify deployment.
 
-**Video.** Everything is served from this host. Cards preview themselves with a silent
-8-second loop from `assets/preview` (hover on desktop, centre-of-viewport on touch);
-clicking plays the full video from `assets/full` with native controls. "Watch on YouTube"
-is a deliberate second click, not the default destination.
+## Media and ownership
 
-Full videos are the best resolution YouTube actually holds for each upload: the four modern
-music videos (*P Tripper*, *Back Off*, *Main Character Syndrome*, *Dog Eat Dog*) are true
-1080p; the 2020-21 lyric, live and studio videos are 640x360 because that is their source
-resolution. Cards carry a badge so the two are not conflated.
-
-Regenerating the media needs `yt-dlp` (2026.08 or newer — earlier builds can list the
-1080p DASH formats but get HTTP 403 fetching them) and `ffmpeg`.
-
-**Reveal animations** fail open. If the viewport reports zero height (background tab, some
-embedded webviews) every element is shown immediately rather than left at `opacity: 0`.
-The `IntersectionObserver`s are held in a `KEEP` array — an observer with no reachable JS
-reference can be garbage collected while it still has live observations, which silently
-blanks the page below the fold.
-
-## Where the content came from
-
-Everything on the page is transcribed from public sources, checked 30 Aug 2026:
-
-| Fact | Source |
-| --- | --- |
-| 11 videos, view counts, dates, durations | [youtube.com/@extantband3863](https://www.youtube.com/@extantband3863) |
-| The return, six-song concept album, HAIYAR | Extant Facebook announcement, Aug 2026 |
-| "Cross The Rubicon" framing | Extant Facebook reel, Aug 2026 |
-| Lineup, production and MV credits | P Tripper / Dog Eat Dog / Main Character Syndrome descriptions |
-| Album *Aggressive Evolution*, TheBigBoyToy mix | *Back Off* video description |
-| 28K followers, band bio | [facebook.com/Extantband](https://www.facebook.com/Extantband/) |
-| Novem Htoo wins The Voice Myanmar 2019; career from 2010 | [Cambridge English interview, 17 Jun 2020](https://www.cambridge.org/elt/blog/2020/06/17/metal-fame-pronunciation-winning-voice-myanmar/) |
-| *Revolution Means* — Burmese Guerrillas, Artists' Shelter | Extant Facebook release post |
-| Merch names/copy, 12K followers, Tak contact | [facebook.com/mmrebeldog](https://www.facebook.com/mmrebeldog) |
-| Solo catalogue | [Novem Htoo on Spotify](https://open.spotify.com/artist/2dEhuPUkMgVlbMHmXfUfAh) |
-
-Hero "video plays" (54,115) is the sum of the eleven view counts in `js/main.js`, and the
-filter chip counts derive from the same array — keep them in sync when updating.
-
-## Updating releases
-
-Add an entry to `RELEASES` at the top of `js/main.js` (`at` is the preview start second),
-drop a thumbnail at `assets/video/<videoId>.jpg` — the code falls back to `i.ytimg.com` if
-it's missing — then bump the chip count and hero total in `index.html`.
-
-## Notes
-
-- No song lyrics are reproduced anywhere on the site.
-- `mmrebeldog.com` is registered but parked, so merch links point at the REBEL DOG Facebook
-  page. Swap them when the store goes live.
-- CSS/JS are versioned with `?v=N` query strings — bump on deploy to bust caches.
-- Media, artwork and photography remain the property of EXTANT, REBEL DOG and their
-  respective owners.
-
-## Production domain
-
-Public site: https://extant.band/ (GitHub Pages, main branch root).
-The apex uses GitHub Pages A records; www is a CNAME to uit-ayeaye.github.io.
-Keep CNAME, canonical URLs, social image URLs and sitemap aligned with this domain.
+The existing 11 video previews and full videos remain locally hosted. New YouTube-only records link to YouTube when no hosted video exists. Music, photographs, artwork and merchandise remain the property of EXTANT, REBEL DOG and their respective owners. No song lyrics are reproduced.

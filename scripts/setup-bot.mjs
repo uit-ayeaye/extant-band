@@ -1,0 +1,10 @@
+import {telegram,env} from '../lib/services.mjs';
+const required=['TELEGRAM_BOT_TOKEN','TELEGRAM_WEBHOOK_SECRET','BOT_BASE_URL','OWNER_TELEGRAM_IDS'];
+for(const key of required)if(!env(key))throw Error(`Missing ${key}`);
+if(!/^https:\/\/[a-z0-9.-]+$/.test(env('BOT_BASE_URL')))throw Error('BOT_BASE_URL must be an HTTPS origin');
+const me=await telegram('getMe',{});
+await telegram('setMyDescription',{description:'Manage EXTANT’s website: send English or Burmese content edits and photos, review drafts, publish, and restore previous versions. Approved members only.'});
+await telegram('setMyShortDescription',{short_description:'EXTANT website content manager. Private editing, previews, publishing and history.'});
+await telegram('setMyCommands',{commands:[['start','Open the site manager'],['help','How to edit the site'],['draft','Review your draft'],['publish','Publish your draft'],['cancel','Discard your draft'],['history','Previous content revisions'],['rollback','Restore a content revision'],['status','Build and deployment status'],['whoami','Show your Telegram user ID'],['privacy','How requests and photos are handled'],['access','Owner: show editor access'],['grant','Owner: grant editing access by user ID'],['revoke','Owner: remove editing access by user ID']].map(([command,description])=>({command,description}))});
+await telegram('setWebhook',{url:`${env('BOT_BASE_URL')}/api/telegram`,secret_token:env('TELEGRAM_WEBHOOK_SECRET'),allowed_updates:['message','callback_query'],max_connections:4,drop_pending_updates:false});
+const status=await telegram('getWebhookInfo',{});console.log(JSON.stringify({bot:me.username,url:status.url,pending:status.pending_update_count,lastError:status.last_error_message||null}));

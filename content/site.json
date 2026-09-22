@@ -1,0 +1,824 @@
+{
+  "version": 1,
+  "seo": {
+    "title": "EXTANT — Myanmar Djent & Metalcore | Official Site",
+    "description": "EXTANT — djent and metalcore from Myanmar, founded in Yangon 2015. Back from exile with a six-song concept album and the HAIYAR cry. Latest single P TRIPPER. Videos, lineup, history and REBEL DOG · BITE BACK merch."
+  },
+  "stats": {
+    "followersThousands": 28,
+    "foundedYear": 2015
+  },
+  "sections": {
+    "top": true,
+    "return": true,
+    "drop": true,
+    "records": true,
+    "vault": true,
+    "unit": true,
+    "history": true,
+    "merch": true,
+    "contact": true,
+    "gallery": true
+  },
+  "copy": {
+    "global-1": "Skip to content",
+    "global-2": "EXTANT",
+    "global-3": "The Return",
+    "global-4": "Latest Drop",
+    "global-5": "Records",
+    "global-6": "The Vault",
+    "global-7": "The Unit",
+    "global-8": "History",
+    "global-9": "Merch",
+    "global-10": "Booking",
+    "global-11": "<span class=\"rec-dot\" aria-hidden=\"true\"></span> New Record",
+    "top-12": "<span class=\"tri\" aria-hidden=\"true\"></span> Yangon, Myanmar  //  Est. 2015  //  Djent &amp; Metalcore",
+    "top-13": "They left the scene, the crowd, and the place they called home.<br />\n      Being away didn't end the music — it changed it.",
+    "top-14": "The Return — HAIYAR",
+    "top-15": "Watch Everything",
+    "top-16": "Bite Back Merch",
+    "return-17": "<span class=\"tri\" aria-hidden=\"true\"></span> 01 — The Return",
+    "return-18": "Announced August 2026",
+    "return-19": "<span class=\"mono\">/haɪ jɑːr/</span> — a traditional Burmese boxing cry, shouted before the fight.",
+    "return-20": "“We're back.”",
+    "return-21": "There was a time the band had to leave — the scene, the audience, and the place they called\n          home. For a while the distance between EXTANT and the people who listened to them grew wider\n          than any of them expected.",
+    "return-22": "It didn't end the music. It changed it. The band returns with a new sound, a\n          <strong>six-song concept album</strong>, and a cry that runs the length of the record:\n          <strong>HAIYAR</strong>. Shouted before the fight, not after it.",
+    "return-23": "This is the return. And it is only the beginning.",
+    "return-24": "01",
+    "return-25": "Six songs, one story",
+    "return-26": "A concept record rather than a singles run — the first time the band has written to a single\n          arc from end to end.",
+    "return-27": "02",
+    "return-28": "Cross The Rubicon",
+    "return-29": "The band's own framing for the turn: a new direction, and a raw, unfiltered sound they have\n          never made before. The Rubicon is the river you only cross once.",
+    "return-30": "03",
+    "return-31": "Made in the room",
+    "return-32": "Written, tracked, mixed and mastered inside the band — PZ on the desk, the same room that\n          produced <em>P Tripper</em>.",
+    "return-33": "04",
+    "return-34": "Straight to the people",
+    "return-35": "Teasers, studio clips and singles go out through the band's own page and channel. No label\n          pipeline in between.",
+    "return-36": "Follow the rollout",
+    "return-37": "Subscribe on YouTube",
+    "return-38": "No release date announced yet — singles are landing first.\n        <em>P Tripper</em> is out now.",
+    "drop-39": "<span class=\"tri\" aria-hidden=\"true\"></span> 02 — Latest Drop",
+    "drop-40": "Official release poster",
+    "drop-41": "<span class=\"rec-dot\" aria-hidden=\"true\"></span> Out now",
+    "drop-42": "P TRIPPER",
+    "drop-43": "<time datetime=\"2026-08-29\">29 August 2026</time>  ·  Official Music Video  ·  3:17",
+    "drop-44": "The first single of the return, and the loudest thing EXTANT has put on tape.\n          Tracked, mixed and mastered in-house by PZ, shot and cut by No Worries with camera by\n          FAT CAT. Five thousand plays inside the first day.",
+    "drop-45": "<span>Vocals</span> Novem Htoo",
+    "drop-46": "<span>Bass</span> PZ",
+    "drop-47": "<span>Guitar</span> Min Khant",
+    "drop-48": "<span>Drums</span> Oo Japan (Idiots)",
+    "drop-49": "<span>Mix &amp; Master</span> PZ",
+    "drop-50": "<span>Directed &amp; Edited</span> No Worries",
+    "drop-51": "<span>Camera</span> FAT CAT",
+    "drop-52": "<span>Released</span> 29 Aug 2026",
+    "drop-53": "▶ Play video",
+    "drop-54": "Open on YouTube ↗",
+    "drop-55": "Available on Spotify, YouTube &amp; all major streaming platforms.",
+    "records-56": "<span class=\"tri\" aria-hidden=\"true\"></span> 03 — Records",
+    "records-57": "The body<br />of work",
+    "records-58": "Albums and singles under the EXTANT name, plus Novem Htoo's solo output. Where a\n        record is still rolling out, only what the band has confirmed is listed here.",
+    "records-59": "Incoming",
+    "records-60": "Concept album · Announced Aug 2026",
+    "records-61": "The HAIYAR record",
+    "records-62": "Six songs, one arc, and a new sound built in exile. Framed by the band as crossing the\n            Rubicon — a turn they can't walk back.",
+    "records-63": "Read the story ↓",
+    "records-64": "2026",
+    "records-65": "Album",
+    "records-66": "Aggressive Evolution",
+    "records-67": "The record behind <em>Back Off</em>, mixed and mastered by TheBigBoyToy with lyrics\n            translated by U Day. Video presented by Mi Joya Pictures.",
+    "records-68": "▶ Watch Back Off",
+    "records-69": "2023",
+    "records-70": "Single · Novem Htoo",
+    "records-71": "Revolution Means",
+    "records-72": "Novem Htoo’s solo single, released on 31 August 2023. The project connects his solo work with the musicians around EXTANT, including Japan of Idiots.",
+    "records-73": "Listen on Spotify ↗",
+    "records-74": "2020",
+    "records-75": "Single run · Burmese",
+    "records-76": "The 2020 Four",
+    "records-77": "<em>Untie The Knot</em>, <em>Vengeance</em>, <em>This Is The War</em> and <em>Disregard</em> —\n            four Burmese-language releases in three months, mixed by Ko Ye Zaw Myo (Big Bag). Still the\n            band's most-played material.",
+    "records-78": "▶ Watch This Is The War",
+    "vault-79": "<span class=\"tri\" aria-hidden=\"true\"></span> 04 — The Vault",
+    "vault-80": "Every release,<br />front to back",
+    "vault-81": "Every official upload on the EXTANT channel, with titles, dates, running times and\n        credits taken from the videos themselves. Previews are hosted here — hover a card on desktop,\n        or bring it to the middle of the screen on mobile. Click for the full video with sound.",
+    "vault-82": "Auto-preview",
+    "vault-83": "Nothing in this cut of the vault.",
+    "unit-84": "<span class=\"tri\" aria-hidden=\"true\"></span> 05 — The Unit",
+    "unit-85": "The current<br />lineup",
+    "unit-86": "Novem Htoo, PZ, Min Khant and Oo Japan — the four players credited on the band’s recent music videos. Oo Japan is also known for his work with Idiots.",
+    "unit-87": "<span>Regular crew</span>\n      No Worries <i>·</i> FAT CAT <i>·</i> Ko Kaung <i>·</i> Latt Pan Ni Production\n      <i>·</i> Myo Wai Yan <i>·</i> Mi Joya Pictures <i>·</i> TheBigBoyToy\n      <i>·</i> Ko Ye Zaw Myo (Big Bag)",
+    "history-88": "<span class=\"tri\" aria-hidden=\"true\"></span> 06 — History",
+    "history-89": "Since 2015,<br />no apology",
+    "history-90": "Founded in Yangon in 2015. What follows is drawn from the band's public channel,\n        page and press.",
+    "history-91": "2015",
+    "history-92": "EXTANT forms in Yangon",
+    "history-93": "A five-piece built out of Myanmar's underground metal circuit, playing djent and metalcore in\n            a scene dominated by pop and rock.",
+    "history-94": "2019",
+    "history-95": "Novem Htoo wins The Voice Myanmar",
+    "history-96": "Novem Htoo wins The Voice Myanmar Season 2 after a blind audition with Slipknot’s <em>Spit It Out</em>. In the final, he performs a song by Idiots — another connection between the two bands.",
+    "history-97": "2020",
+    "history-98": "The Burmese lyric-video run",
+    "history-99": "Four releases in three months — <em>Untie The Knot</em>, <em>Vengeance</em>,\n            <em>This Is The War</em> and <em>Disregard</em> — mixed by Ko Ye Zaw Myo (Big Bag).\n            <em>This Is The War</em> becomes the band's most-played upload.",
+    "history-100": "2021",
+    "history-101": "Stages, then exile",
+    "history-102": "A live set from the TGIF show in Taunggyi lands in January. The coup follows in February.\n            The band later described having to leave the scene, the audience and the place they called\n            home — and the distance that opened up between them and the people who listened.",
+    "history-103": "2023",
+    "history-104": "Revolution Means",
+    "history-105": "Novem Htoo releases a solo single on Burmese Guerrillas in collaboration with Artists' Shelter,\n            featuring The BigBoyToy and Japan (Idiots) — out across Apple Music, Spotify, Tidal, Deezer and\n            YouTube Music.",
+    "history-106": "2025",
+    "history-107": "Back on camera",
+    "history-108": "<em>Dog Eat Dog</em> and <em>Main Character Syndrome</em> arrive five days apart in November —\n            the first proper music videos with the current four-piece lineup, shot with Ko Kaung on\n            photography and Latt Pan Ni Production on lights.",
+    "history-109": "2026",
+    "history-110": "Aggressive Evolution, then HAIYAR",
+    "history-111": "<em>Back Off</em> lands in May off the <strong>Aggressive Evolution</strong> record.\n            <em>P Tripper</em> follows on 29 August and clears five thousand plays in a day. Days later\n            the band announces the return: a six-song concept album carrying the\n            <strong>HAIYAR</strong> cry.",
+    "merch-112": "<span class=\"tri\" aria-hidden=\"true\"></span> 07 — Merch",
+    "merch-113": "REBEL DOG<br /><span>BITE BACK</span>",
+    "merch-114": "The streetwear arm around the band — graphic tees and carry built for the\n          everyday, with the politics left in. Run out of Tak, on the Thai border.\n          <em>“If you dare to stand up for what is right, you are welcome here.”</em>",
+    "merch-115": "<span class=\"tri\" aria-hidden=\"true\"></span> The Collection",
+    "merch-116": "Tee",
+    "merch-117": "Molotov",
+    "merch-118": "Bold graphic print designed to deliver an unapologetic street aesthetic.",
+    "merch-119": "Tee",
+    "merch-120": "Unbowed",
+    "merch-121": "A graphic tee representing Daw Aung San Suu Kyi and her unbroken spirit.",
+    "merch-122": "Tee",
+    "merch-123": "Ignite. Melt. Speak.",
+    "merch-124": "Let your tee do the talking when you want your voice heard.",
+    "merch-125": "Carry",
+    "merch-126": "Bite Back Tote",
+    "merch-127": "Built with maximum street vibe for your everyday carry.",
+    "merch-128": "<span class=\"tri\" aria-hidden=\"true\"></span> Street Culture Files",
+    "merch-129": "REBEL DOG runs an ongoing editorial series on where street culture\n      actually came from, published to the page alongside the drops.",
+    "merch-130": "Fact of the month",
+    "merch-131": "The Zoot Suit",
+    "merch-132": "The original oversized silhouette, and the first time baggy clothing was treated as a\n          political act.",
+    "merch-133": "Place",
+    "merch-134": "NOWHERE, Harajuku",
+    "merch-135": "The legendary store where Fujiwara, NIGO and Jun Takahashi changed youth culture for good.",
+    "merch-136": "People",
+    "merch-137": "Godfathers of Japan's street culture",
+    "merch-138": "How Hiroshi Fujiwara and NIGO rewrote global streetwear — limited drops, collaborations,\n          exclusivity.",
+    "merch-139": "Home",
+    "merch-140": "From 8888 to Spring Revolution",
+    "merch-141": "Myanmar's own line of protest, and why the brand still reads “still biting back”.",
+    "merch-142": "Order via REBEL DOG ↗",
+    "merch-143": "iamrebeldog@gmail.com",
+    "merch-144": "12K followers · Run out of Tak, Thailand, on the Myanmar border ·\n        Orders go through the REBEL DOG page —\n        <span class=\"mono\">mmrebeldog.com</span> is registered but not serving yet.",
+    "contact-145": "<span class=\"tri\" aria-hidden=\"true\"></span> 08 — Booking &amp; Contact",
+    "contact-146": "Put us<br />on the bill",
+    "contact-147": "Festivals, gigs, features, press. Reach the band through the official\n      page, or the merch line for anything REBEL DOG.",
+    "contact-148": "Facebook",
+    "contact-149": "/Extantband",
+    "contact-150": "28K followers · Booking &amp; enquiries",
+    "contact-151": "YouTube",
+    "contact-152": "@extantband3863",
+    "contact-153": "1.69K subscribers · 11 videos",
+    "contact-154": "Merch",
+    "contact-155": "REBEL DOG",
+    "contact-156": "12K followers · Bite Back collection",
+    "contact-157": "Spotify",
+    "contact-158": "Novem Htoo",
+    "contact-159": "Solo catalogue · Revolution Means, Body Bags",
+    "global-160": "EXTANT<br /><span>Yangon · Myanmar · Est. 2015</span>",
+    "global-161": "The Return",
+    "global-162": "Latest Drop",
+    "global-163": "Records",
+    "global-164": "The Vault",
+    "global-165": "The Unit",
+    "global-166": "History",
+    "global-167": "Merch",
+    "global-168": "Booking",
+    "global-169": "Fan-built official-style site. Music, artwork and photography remain the property of EXTANT,\n      REBEL DOG and their respective owners. Previews and full videos are both served from this site, at the highest\n      resolution each was uploaded in. “Watch on YouTube” opens the band's own channel. Figures reflect public channel data at time of build."
+  },
+  "links": {
+    "link-1": {
+      "href": "#main",
+      "label": "Skip to content"
+    },
+    "link-2": {
+      "href": "#top",
+      "label": "EXTANT"
+    },
+    "link-3": {
+      "href": "#return",
+      "label": "The Return"
+    },
+    "link-4": {
+      "href": "#drop",
+      "label": "Latest Drop"
+    },
+    "link-5": {
+      "href": "#records",
+      "label": "Records"
+    },
+    "link-6": {
+      "href": "#vault",
+      "label": "The Vault"
+    },
+    "link-7": {
+      "href": "#unit",
+      "label": "The Unit"
+    },
+    "link-8": {
+      "href": "#history",
+      "label": "History"
+    },
+    "link-9": {
+      "href": "#merch",
+      "label": "Merch"
+    },
+    "link-10": {
+      "href": "#contact",
+      "label": "Booking"
+    },
+    "link-11": {
+      "href": "#return",
+      "label": "New Record"
+    },
+    "link-12": {
+      "href": "#return",
+      "label": "The Return — HAIYAR"
+    },
+    "link-13": {
+      "href": "#vault",
+      "label": "Watch Everything"
+    },
+    "link-14": {
+      "href": "#merch",
+      "label": "Bite Back Merch"
+    },
+    "link-15": {
+      "href": "#return",
+      "label": ""
+    },
+    "link-16": {
+      "href": "https://www.facebook.com/Extantband/",
+      "label": "Follow the rollout"
+    },
+    "link-17": {
+      "href": "https://www.youtube.com/@extantband3863",
+      "label": "Subscribe on YouTube"
+    },
+    "link-18": {
+      "href": "https://www.youtube.com/watch?v=wV6sVMRilmQ",
+      "label": "Open on YouTube ↗"
+    },
+    "link-19": {
+      "href": "#return",
+      "label": "Read the story ↓"
+    },
+    "link-20": {
+      "href": "https://open.spotify.com/artist/2dEhuPUkMgVlbMHmXfUfAh",
+      "label": "Listen on Spotify ↗"
+    },
+    "link-21": {
+      "href": "https://www.facebook.com/mmrebeldog",
+      "label": "Order via REBEL DOG ↗"
+    },
+    "link-22": {
+      "href": "mailto:iamrebeldog@gmail.com",
+      "label": "iamrebeldog@gmail.com"
+    },
+    "link-23": {
+      "href": "https://www.facebook.com/Extantband/",
+      "label": "Facebook /Extantband 28K followers · Booking & enquiries"
+    },
+    "link-24": {
+      "href": "https://www.youtube.com/@extantband3863",
+      "label": "YouTube @extantband3863 1.69K subscribers · 11 videos"
+    },
+    "link-25": {
+      "href": "https://www.facebook.com/mmrebeldog",
+      "label": "Merch REBEL DOG 12K followers · Bite Back collection"
+    },
+    "link-26": {
+      "href": "https://open.spotify.com/artist/2dEhuPUkMgVlbMHmXfUfAh",
+      "label": "Spotify Novem Htoo Solo catalogue · Revolution Means, Body Bags"
+    },
+    "link-27": {
+      "href": "#return",
+      "label": "The Return"
+    },
+    "link-28": {
+      "href": "#drop",
+      "label": "Latest Drop"
+    },
+    "link-29": {
+      "href": "#records",
+      "label": "Records"
+    },
+    "link-30": {
+      "href": "#vault",
+      "label": "The Vault"
+    },
+    "link-31": {
+      "href": "#unit",
+      "label": "The Unit"
+    },
+    "link-32": {
+      "href": "#history",
+      "label": "History"
+    },
+    "link-33": {
+      "href": "#merch",
+      "label": "Merch"
+    },
+    "link-34": {
+      "href": "#contact",
+      "label": "Booking"
+    }
+  },
+  "images": {
+    "image-1": {
+      "src": "assets/press/live-yangon.jpg",
+      "alt": "",
+      "label": "top / background"
+    },
+    "image-2": {
+      "src": "assets/press/cross-the-rubicon.jpg",
+      "alt": "",
+      "label": "return / background"
+    },
+    "image-3": {
+      "src": "assets/releases/poster-p-tripper.jpg",
+      "alt": "P TRIPPER release poster — graffiti lettering over a repeating EXTANT triangle pattern",
+      "label": "drop / P TRIPPER release poster — graffiti lettering over a repeating EXTANT triangle pattern"
+    },
+    "image-4": {
+      "src": "assets/press/cross-the-rubicon.jpg",
+      "alt": "Still from the Cross The Rubicon announcement visual",
+      "label": "records / Still from the Cross The Rubicon announcement visual"
+    },
+    "image-5": {
+      "src": "assets/poster/Yz292C0Bn5o.jpg",
+      "alt": "Back Off — still from the official music video",
+      "label": "records / Back Off — still from the official music video"
+    },
+    "image-6": {
+      "src": "assets/releases/cover-revolution-means.jpg",
+      "alt": "Revolution Means single artwork",
+      "label": "records / Revolution Means single artwork"
+    },
+    "image-7": {
+      "src": "assets/poster/Ie8XdUSULFg.jpg",
+      "alt": "This Is The War — lyric video still",
+      "label": "records / This Is The War — lyric video still"
+    },
+    "image-8": {
+      "src": "assets/press/band-main-character-syndrome.jpg",
+      "alt": "",
+      "label": "unit / background"
+    },
+    "image-9": {
+      "src": "assets/brand/extant-logo-classic.jpg",
+      "alt": "Early EXTANT logo — inverted triangle mark over an icy mountain graphic",
+      "label": "history / Early EXTANT logo — inverted triangle mark over an icy mountain graphic"
+    },
+    "image-10": {
+      "src": "assets/press/voice-spit-it-out.jpg",
+      "alt": "Novem Htoo performing in The Voice Myanmar blind auditions",
+      "label": "history / Novem Htoo performing in The Voice Myanmar blind auditions"
+    },
+    "image-11": {
+      "src": "assets/releases/revolution-means-banner.jpg",
+      "alt": "Revolution Means release artwork — orange winged figure beside the single's cover",
+      "label": "history / Revolution Means release artwork — orange winged figure beside the single's cover"
+    },
+    "image-12": {
+      "src": "assets/press/band-main-character-syndrome.jpg",
+      "alt": "EXTANT in the Main Character Syndrome video",
+      "label": "history / EXTANT in the Main Character Syndrome video"
+    },
+    "image-13": {
+      "src": "assets/press/cross-the-rubicon.jpg",
+      "alt": "Still from EXTANT's Cross The Rubicon announcement visual",
+      "label": "history / Still from EXTANT's Cross The Rubicon announcement visual"
+    },
+    "image-14": {
+      "src": "assets/brand/rebeldog-biteback.jpg",
+      "alt": "REBEL DOG BITE BACK logo — a red and black raised paw-fist",
+      "label": "merch / REBEL DOG BITE BACK logo — a red and black raised paw-fist"
+    },
+    "image-15": {
+      "src": "assets/merch/rebeldog-banner.jpg",
+      "alt": "REBEL DOG banner — a skater crossing a street, red paw-fist logo overlaid",
+      "label": "merch / REBEL DOG banner — a skater crossing a street, red paw-fist logo overlaid"
+    }
+  },
+  "members": [
+    {
+      "id": "novem-htoo",
+      "name": "Novem Htoo",
+      "role": "Vocals",
+      "bio": "EXTANT’s vocalist and the winner of The Voice Myanmar in 2019. His blind audition brought Slipknot’s “Spit It Out” to national television. Before EXTANT, he sang with Myanmar metal band Nightmare; his work also includes solo releases and collaborations across the local rock scene.",
+      "photo": "",
+      "photoAlt": ""
+    },
+    {
+      "id": "pz",
+      "name": "PZ",
+      "role": "Bass · Production",
+      "bio": "Low end and the desk. Mixes and masters the band's recent output, including P Tripper, Dog Eat Dog and Main Character Syndrome.",
+      "photo": "",
+      "photoAlt": ""
+    },
+    {
+      "id": "min-khant",
+      "name": "Min Khant",
+      "role": "Guitar",
+      "bio": "Riffs, drop tunings and the djent-leaning rhythm work that anchors the newer material.",
+      "photo": "",
+      "photoAlt": ""
+    },
+    {
+      "id": "oo-japan",
+      "name": "Oo Japan",
+      "role": "Drums · Idiots",
+      "bio": "Oo Japan, known as Japan of the Myanmar rock band Idiots, plays drums with EXTANT. Credited as “Japan Idiots” on P Tripper, Dog Eat Dog and Main Character Syndrome, he connects the band’s rhythm section with Myanmar’s wider rock scene.",
+      "photo": "",
+      "photoAlt": ""
+    }
+  ],
+  "releases": [
+    {
+      "id": "wV6sVMRilmQ",
+      "crew": [
+        [
+          "Vocal",
+          "Novem Htoo"
+        ],
+        [
+          "Bass",
+          "PZ"
+        ],
+        [
+          "Drum",
+          "Japan Idiots"
+        ],
+        [
+          "Guitar",
+          "Min Khant"
+        ],
+        [
+          "Mix & master",
+          "PZ"
+        ],
+        [
+          "Directed & edited",
+          "No Worries"
+        ],
+        [
+          "Camera",
+          "FAT CAT"
+        ]
+      ],
+      "res": "1080p",
+      "title": "P Tripper",
+      "sub": "Official music video",
+      "kind": "mv",
+      "kindLabel": "Music video",
+      "date": "2026-08-29",
+      "views": 5672,
+      "len": "3:17",
+      "at": 2,
+      "credits": "Dir. No Worries · Camera FAT CAT · Mix PZ",
+      "poster": "assets/poster/wV6sVMRilmQ.jpg",
+      "preview": "assets/preview/wV6sVMRilmQ.mp4",
+      "video": "assets/full/wV6sVMRilmQ.webm"
+    },
+    {
+      "id": "Yz292C0Bn5o",
+      "crew": [
+        [
+          "Album",
+          "Aggressive Evolution"
+        ],
+        [
+          "Mix & master",
+          "TheBigBoyToy"
+        ],
+        [
+          "Lyrics translated",
+          "U Day"
+        ],
+        [
+          "Video",
+          "Mi Joya Pictures"
+        ]
+      ],
+      "res": "1080p",
+      "title": "Back Off",
+      "sub": "From the album Aggressive Evolution",
+      "kind": "mv",
+      "kindLabel": "Music video",
+      "date": "2026-05-25",
+      "views": 250,
+      "len": "3:01",
+      "at": 2,
+      "credits": "Mix & master TheBigBoyToy · Mi Joya Pictures",
+      "poster": "assets/poster/Yz292C0Bn5o.jpg",
+      "preview": "assets/preview/Yz292C0Bn5o.mp4",
+      "video": "assets/full/Yz292C0Bn5o.webm"
+    },
+    {
+      "id": "ip9R4RFdfvs",
+      "crew": [
+        [
+          "Vocal",
+          "Novem Htoo"
+        ],
+        [
+          "Bass",
+          "PZ"
+        ],
+        [
+          "Drum",
+          "Japan Idiots"
+        ],
+        [
+          "Guitar",
+          "Min Khant"
+        ],
+        [
+          "Mix & master",
+          "PZ"
+        ],
+        [
+          "Directed & edited",
+          "No Worries"
+        ],
+        [
+          "Photography",
+          "Ko Kaung"
+        ],
+        [
+          "Production assistant",
+          "Myo Wai Yan"
+        ],
+        [
+          "Lighting",
+          "Latt Pan Ni Production"
+        ],
+        [
+          "Special thanks",
+          "David Zion"
+        ]
+      ],
+      "res": "1080p",
+      "title": "Main Character Syndrome",
+      "sub": "Official music video",
+      "kind": "mv",
+      "kindLabel": "Music video",
+      "date": "2025-11-28",
+      "views": 528,
+      "len": "2:24",
+      "at": 2,
+      "credits": "Dir. No Worries · DoP Ko Kaung · Lights Latt Pan Ni",
+      "poster": "assets/poster/ip9R4RFdfvs.jpg",
+      "preview": "assets/preview/ip9R4RFdfvs.mp4",
+      "video": "assets/full/ip9R4RFdfvs.webm"
+    },
+    {
+      "id": "j5Z9SpeU73g",
+      "crew": [
+        [
+          "Vocal",
+          "Novem Htoo"
+        ],
+        [
+          "Bass",
+          "PZ"
+        ],
+        [
+          "Drum",
+          "Japan Idiots"
+        ],
+        [
+          "Guitar",
+          "Min Khant"
+        ],
+        [
+          "Mix & master",
+          "PZ"
+        ],
+        [
+          "Directed, shot, lit & VFX",
+          "B.S.A"
+        ],
+        [
+          "Special thanks",
+          "Min Maw Kunn, Lin Thu"
+        ]
+      ],
+      "res": "1080p",
+      "title": "Dog Eat Dog",
+      "sub": "Official music video",
+      "kind": "mv",
+      "kindLabel": "Music video",
+      "date": "2025-11-23",
+      "views": 773,
+      "len": "3:19",
+      "at": 2,
+      "credits": "Shot & cut by B.S.A · Mix PZ",
+      "poster": "assets/poster/j5Z9SpeU73g.jpg",
+      "preview": "assets/preview/j5Z9SpeU73g.mp4",
+      "video": "assets/full/j5Z9SpeU73g.webm"
+    },
+    {
+      "id": "zL7UzVvXNUQ",
+      "crew": [
+        [
+          "Show",
+          "TGIF Show, Taunggyi"
+        ]
+      ],
+      "res": "360p",
+      "title": "Wake Up",
+      "sub": "Live at the TGIF show, Taunggyi",
+      "kind": "live",
+      "kindLabel": "Live",
+      "date": "2021-01-08",
+      "views": 1960,
+      "len": "3:21",
+      "at": 2,
+      "credits": "Live set · Taunggyi",
+      "poster": "assets/poster/zL7UzVvXNUQ.jpg",
+      "preview": "assets/preview/zL7UzVvXNUQ.mp4",
+      "video": "assets/full/zL7UzVvXNUQ.webm"
+    },
+    {
+      "id": "qDjrltloZTo",
+      "crew": [
+        [
+          "Occasion",
+          "The Voice Myanmar grand final"
+        ]
+      ],
+      "res": "360p",
+      "title": "The Voice Grand Final Jam",
+      "sub": "Rehearsal session",
+      "kind": "live",
+      "kindLabel": "Live",
+      "date": "2020-12-20",
+      "views": 1174,
+      "len": "3:02",
+      "at": 2,
+      "credits": "Rehearsal footage",
+      "poster": "assets/poster/qDjrltloZTo.jpg",
+      "preview": "assets/preview/qDjrltloZTo.mp4",
+      "video": "assets/full/qDjrltloZTo.webm"
+    },
+    {
+      "id": "3t865d335L0",
+      "crew": [
+        [
+          "Singer",
+          "Novem Htoo"
+        ],
+        [
+          "Lyrics",
+          "Novem Htoo"
+        ],
+        [
+          "Mix & master",
+          "Ye Zaw Myo (Big Bag)"
+        ],
+        [
+          "Harmony",
+          "Ko Paing (Black Bird)"
+        ],
+        [
+          "Lyric video",
+          "RP2, Mevon Production"
+        ]
+      ],
+      "res": "360p",
+      "title": "မေ့ · Disregard",
+      "sub": "Official lyric video",
+      "kind": "lyric",
+      "kindLabel": "Lyric video",
+      "date": "2020-12-14",
+      "views": 14825,
+      "len": "4:36",
+      "at": 2,
+      "credits": "Novem Htoo · Mix Ko Ye Zaw Myo · Harmony Ko Paing",
+      "poster": "assets/poster/3t865d335L0.jpg",
+      "preview": "assets/preview/3t865d335L0.mp4",
+      "video": "assets/full/3t865d335L0.webm"
+    },
+    {
+      "id": "Ie8XdUSULFg",
+      "crew": [
+        [
+          "Singer",
+          "Novem Htoo"
+        ],
+        [
+          "Lyrics",
+          "Novem Htoo"
+        ],
+        [
+          "Mix & master",
+          "Ye Zaw Myo (Big Bag)"
+        ],
+        [
+          "Harmony",
+          "Ko Paing (Black Bird)"
+        ],
+        [
+          "Lyric video",
+          "Mevon Production"
+        ]
+      ],
+      "res": "360p",
+      "title": "ဒါဟာတိုက်ပွဲ · This Is The War",
+      "sub": "Official lyric video",
+      "kind": "lyric",
+      "kindLabel": "Lyric video",
+      "date": "2020-11-19",
+      "views": 18229,
+      "len": "4:04",
+      "at": 2,
+      "credits": "Novem Htoo · Mix Ko Ye Zaw Myo · Harmony Ko Paing",
+      "poster": "assets/poster/Ie8XdUSULFg.jpg",
+      "preview": "assets/preview/Ie8XdUSULFg.mp4",
+      "video": "assets/full/Ie8XdUSULFg.webm"
+    },
+    {
+      "id": "URPQ8aAx52g",
+      "crew": [
+        [
+          "Note",
+          "First studio update, recorded during the pandemic"
+        ]
+      ],
+      "res": "360p",
+      "title": "Studio Update #1",
+      "sub": "Behind the desk during the pandemic",
+      "kind": "doc",
+      "kindLabel": "Studio",
+      "date": "2020-10-24",
+      "views": 989,
+      "len": "2:48",
+      "at": 2,
+      "credits": "Studio documentation",
+      "poster": "assets/poster/URPQ8aAx52g.jpg",
+      "preview": "assets/preview/URPQ8aAx52g.mp4",
+      "video": "assets/full/URPQ8aAx52g.webm"
+    },
+    {
+      "id": "6yPrzqdpPxw",
+      "crew": [
+        [
+          "Composed by",
+          "Extant"
+        ],
+        [
+          "Mix & master",
+          "Ye Zaw Myo (Big Bag)"
+        ]
+      ],
+      "res": "360p",
+      "title": "အတုံ့အလှည့် · Vengeance",
+      "sub": "Official lyric video",
+      "kind": "lyric",
+      "kindLabel": "Lyric video",
+      "date": "2020-10-14",
+      "views": 4596,
+      "len": "2:33",
+      "at": 2,
+      "credits": "Composed by Extant · Mix Ko Ye Zaw Myo (Big Bag)",
+      "poster": "assets/poster/6yPrzqdpPxw.jpg",
+      "preview": "assets/preview/6yPrzqdpPxw.mp4",
+      "video": "assets/full/6yPrzqdpPxw.webm"
+    },
+    {
+      "id": "4ELxFy0xiYw",
+      "crew": [
+        [
+          "Composed by",
+          "Extant"
+        ],
+        [
+          "Mix & master",
+          "Ye Zaw Myo (Big Bag)"
+        ]
+      ],
+      "res": "360p",
+      "title": "အချုပ်အနှောင်မဲ့ · Untie The Knot",
+      "sub": "Official lyric video",
+      "kind": "lyric",
+      "kindLabel": "Lyric video",
+      "date": "2020-10-01",
+      "views": 5237,
+      "len": "4:03",
+      "at": 2,
+      "credits": "Composed by Extant · Mix Ko Ye Zaw Myo (Big Bag)",
+      "poster": "assets/poster/4ELxFy0xiYw.jpg",
+      "preview": "assets/preview/4ELxFy0xiYw.mp4",
+      "video": "assets/full/4ELxFy0xiYw.webm"
+    }
+  ],
+  "gallery": []
+}
