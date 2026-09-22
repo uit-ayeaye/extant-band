@@ -1,3 +1,5 @@
+/* Keep filtered cards and fallback controls out of layout when hidden. */
+[hidden]{display:none!important}
 /* ==========================================================================
    EXTANT — Myanmar djent & metalcore
 
