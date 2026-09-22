@@ -48,3 +48,13 @@ test('Telegram updates must come from a human in their own private chat',async()
  assert.equal(sender({callback_query:{from:{id:99999},message,data:'publish:x'}}),null);
  assert.equal(sender({channel_post:message}),null);
 });
+
+test('rich text reconstructs only inert inline tags, including parser edge cases',async()=>{
+ const {rich}=await import('../lib/content.mjs');
+ const probes=['<textarea>safe</textarea/><img src=x onerror=alert(1)>','<svg><animate href="javascript:alert(1)"></animate></svg>','<span class="tri evil" onclick="bad()">text</span>','<math><mtext><img src=x onerror=bad()></mtext></math>','<time datetime="2026-01-01" style="color:red" onmouseover="bad()">Today</time>'];
+ for(const probe of probes){const html=rich(probe);const $=load(html,{},false);assert.equal($('script,img,svg,math,textarea,iframe').length,0);assert.equal($('[onclick],[onerror],[style],[href]').length,0);assert.equal(rich(html),html);}
+});
+test('content rejects invalid calendar dates and non-image photos',()=>{
+ const n=structuredClone(c);n.releases[0].date='2026-02-31';assert.throws(()=>validateContent(n));
+ const m=structuredClone(c);m.members[0].photo='assets/full/test.webm';assert.throws(()=>validateContent(m));
+});

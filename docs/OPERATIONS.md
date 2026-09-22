@@ -51,7 +51,7 @@ npm run bot:deploy
 npm run bot:setup
 ```
 
-Netlify's import command prints values, so keep its output private. Re-deploy after changing function environment variables. In Netlify, keep auto top-up disabled unless the owner deliberately enables paid usage. The public callback routes must be reachable by Telegram and GitHub; application-level authentication remains enforced.
+Netlify's import command prints values, so keep its output private. Re-deploy after changing function environment variables. Set `AWS_LAMBDA_JS_RUNTIME=nodejs22.x` in Netlify, as shown in `.env.example`. The deployment preparation script includes Sharp’s Linux x64 binaries when packaging from macOS; `npm ci` restores local platform dependencies for local image work. In Netlify, keep auto top-up disabled unless the owner deliberately enables paid usage. The public callback routes must be reachable by Telegram and GitHub; application-level authentication remains enforced.
 
 The token expiry does not affect the already published site, but prevents further bot publication until renewed. Replace it with the same minimal scope, update `GITHUB_TOKEN`, redeploy, and verify `/status`.
 
