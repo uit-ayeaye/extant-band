@@ -820,5 +820,12 @@
       "video": "assets/full/4ELxFy0xiYw.webm"
     }
   ],
-  "gallery": []
+  "gallery": [
+    {
+      "id": "extant-live-band-archive",
+      "src": "assets/uploads/f64a025419af5f03afbbfded437b2e46.webp",
+      "alt": "EXTANT performing on stage",
+      "caption": "EXTANT live in Yangon."
+    }
+  ]
 }
